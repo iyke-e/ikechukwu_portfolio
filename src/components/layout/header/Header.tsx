@@ -30,7 +30,7 @@ const Header = () => {
     return (
         <header className='relative isolation-auto z-99999'>
             <div className='flex justify-between items-center h-15 md:h-20 pad-auto'>
-                <LogoIcon />
+                <LogoIcon onClick={() => setMenuOpen(false)} />
                 <div onClick={() => { setMenuOpen(!menuOpen), toggleScroll() }} className='flex gap-2 items-center md:hidden'>
                     <p className='text-lg leading-0'>Menu</p>
                     {menuOpen ? <IoClose className='w-5 h-5' /> : <IoMenu className='w-5 h-5' />}

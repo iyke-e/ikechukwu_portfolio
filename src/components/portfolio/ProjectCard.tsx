@@ -37,7 +37,7 @@ const ProjectCard = ({ item }: { item: ProjectProp }) => {
                     {item.stack.map((tool, index) => (
                         <div
                             key={index}
-                            className="flex gap-1 py-1 px-2 rounded-sm bg-white/30 items-center"
+                            className="flex gap-1 py-1 px-2 rounded-sm bg-white/5 items-center"
                         >
                             {tool.icon ? (
                                 <Image src={tool.icon} alt={tool.name} className="w-3 h-3" />

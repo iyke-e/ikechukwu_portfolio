@@ -4,8 +4,8 @@ import Image from 'next/image';
 import React from 'react'
 import { stackList } from '@/data/stacklist';
 import Button from '../ui/Button';
-import ProfileCard from '../ui/animations/ProfileCard';
 import { useRouter } from 'next/navigation';
+import Chatbot from '../chatbot/Chatbot';
 
 
 
@@ -42,7 +42,7 @@ const Hero = () => {
                     </div>
 
 
-
+                    {/* 
                     <ProfileCard
                         name="Egwim Iyke"
                         title="Frontend Developer"
@@ -55,7 +55,8 @@ const Hero = () => {
                         enableMobileTilt={false}
                         onContactClick={() => router.push("/contact")}
                         className='hidden md:block'
-                    />
+                    /> */}
+
 
 
 

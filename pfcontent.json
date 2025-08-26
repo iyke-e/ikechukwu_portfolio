@@ -1,0 +1,131 @@
+{
+    "about": "Hi! I'm Egwim Ikechukwu, a frontend developer from Lagos, Nigeria (he/him). I'm currently training as a mobile developer at Rise, focusing on React Native. I have around 3 years of experience in web and mobile development, working with Next.js, React, React Native, Expo, JavaScript, TypeScript, and more. I also have skills in graphic design using CorelDRAW and Figma, and I’ve taught IT to children.\n\nI build projects to showcase my skills, including this portfolio with an AI chatbot and a blog section. I’m also working on ShowcaseHub, a portfolio CMS, and Campus Crib, a platform for students to find accommodation.\n\nOutside tech, I enjoy music, gaming, anime, traveling, and staying indoors. I’m passionate about AI and Web3, and I play musical instruments occasionally. I’m a team player, highly curious, self-motivated, and believe consistent effort can achieve great results.\n\nFun fact: I love singing in the shower and sometimes get inspired for my projects while jamming to music!",
+    "projects": [
+        {
+            "name": "ShowcaseHub",
+            "description": "ShowcaseHub is a portfolio CMS designed for developers and creatives to manage and display their projects. Users can upload project details, multiple images, manage featured projects, and sync content directly with a personal portfolio website. Built with a modern web stack, it emphasizes ease of use and flexibility for portfolio management.",
+            "techStack": [
+                "React",
+                "Next.js",
+                "Node.js",
+                "MongoDB",
+                "Express",
+                "Tailwind CSS",
+                "Cloudinary"
+            ]
+        },
+        {
+            "name": "Campus Crib",
+            "description": "Campus Crib is a student-focused hostel-finding platform that allows users to browse, search, and book accommodations easily. The platform simplifies the process of finding safe and affordable housing, providing detailed listings, images, and contact information for landlords or property managers. Built with usability and student convenience in mind.",
+            "techStack": [
+                "React",
+                "Next.js",
+                "Node.js",
+                "MongoDB",
+                "Express",
+                "Tailwind CSS",
+                "Axios"
+            ]
+        },
+        {
+            "name": "Spotify Clone",
+            "description": "A full-featured music streaming application built with React Native. It includes dynamic playlists, artist and album pages, recommended tracks based on listening history, and Deezer API integration for streaming music. The app emphasizes responsive UI, smooth navigation, and an engaging user experience similar to Spotify.",
+            "techStack": [
+                "React Native",
+                "Expo",
+                "JavaScript",
+                "React Navigation",
+                "Deezer API",
+                "Context API",
+                "Tailwind CSS"
+            ]
+        },
+        {
+            "name": "Tech & Gamification Blog",
+            "description": "A personal blog section integrated into my portfolio to demonstrate practical knowledge of SEO, testing, and gamification principles. Each post is optimized for search engines, tested with Cypress to ensure quality and functionality, and includes interactive elements to apply gamification techniques. The blog showcases modern web development practices and serves as a knowledge-sharing platform.",
+            "techStack": [
+                "Next.js",
+                "React",
+                "Tailwind CSS",
+                "JavaScript",
+                "TypeScript",
+                "Cypress",
+                "SEO Optimization",
+                "Gamification Implementation"
+            ]
+        }
+    ],
+    "skills": {
+        "frontend": [
+            "React",
+            "Next.js",
+            "React Native",
+            "Expo",
+            "JavaScript",
+            "TypeScript",
+            "HTML5",
+            "CSS3",
+            "Tailwind CSS",
+            "Redux",
+            "Context API",
+            "React Fiber",
+            "Three.js",
+            "Front-end performance optimization",
+            "SEO principles"
+        ],
+        "backend": [
+            "Node.js",
+            "Express.js",
+            "MongoDB",
+            "RESTful APIs",
+            "GraphQL",
+            "Authentication & Authorization"
+        ],
+        "mobile": [
+            "React Native",
+            "Expo",
+            "Cross-platform app development",
+            "Navigation & State Management"
+        ],
+        "design": [
+            "Figma",
+            "CorelDRAW",
+            "UI/UX design",
+            "Wireframing",
+            "Prototyping",
+            "Graphic Design",
+            "Gamification principles"
+        ],
+        "ai_ml": [
+            "Integration of AI/ML models",
+            "Understanding of AI-driven user experiences"
+        ],
+        "testing": [
+            "Cypress",
+            "Front-end testing best practices"
+        ],
+        "devTools": [
+            "Git",
+            "GitHub",
+            "Postman",
+            "VS Code",
+            "Cloudinary",
+            "Axios",
+            "npm",
+            "yarn"
+        ],
+        "methodologies": [
+            "Agile/Scrum development",
+            "Problem-solving",
+            "Strong communication"
+        ]
+    },
+    "contact": {
+        "email": "egwimikechukwu.gp@gmail.com",
+        "phone": "+2348107027244",
+        "linkedin": "https://www.linkedin.com/in/iyke-gp",
+        "github": "https://github.com/iyke-e",
+        "twitter": "https://twitter.com/Ikechukwu_eg",
+        "message": "You can reach out to me via email or LinkedIn for professional inquiries, collaborations, or networking. I usually respond within 24-48 hours. Feel free to explore my GitHub and Twitter for more updates on my projects and interests."
+    }
+}
