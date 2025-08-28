@@ -90,7 +90,7 @@ const DesktopProjectAnimatedSection = ({ project, activeIndex, nextIndex, animat
 
                 </div>
 
-                <div className="grid grid-cols-4  mt-9 gap-8">
+                <div className="grid grid-cols-4  mt-6 gap-8">
                     {project.map((item, index) => (
                         <div
                             onClick={() => {

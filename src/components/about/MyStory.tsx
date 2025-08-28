@@ -4,14 +4,31 @@ import React, { useState } from 'react'
 import Aipics from "@/assets/iyke.jpg"
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
+import ProfileCard from '../ui/animations/ProfileCard';
+import { useRouter } from 'next/navigation';
 
 const MyStory = () => {
     const [showMore, setShowMore] = useState(false);
+    const router = useRouter()
 
     const handleToggle = () => setShowMore(!showMore);
     return (
         <div className='grid md:grid-cols-[3fr_2fr] gap-6 md:gap-16 '>
-            <div className='block md:order-2  h-100 md:aspect-[3/4]  bg-cover bg-center bg-no-repeat' style={{ backgroundImage: `url(${Aipics.src})` }} />
+
+            <ProfileCard
+                name="Egwim Iyke"
+                title="Frontend Developer"
+                handle="IykeCodes"
+                status="Online"
+                contactText="Contact Me"
+                avatarUrl="/iyke.jpg"
+                showUserInfo={true}
+                enableTilt={true}
+                enableMobileTilt={false}
+                onContactClick={() => router.push("/contact")}
+                className=' md:order-2 mx-auto md:block'
+            />
+
             <div className='md:order-1'>
                 {/* Always visible intro */}
                 <p className='text-lg leading-8 mt-6'>
