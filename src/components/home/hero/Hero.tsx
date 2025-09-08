@@ -7,6 +7,8 @@ import Button from '../../ui/Button';
 import { useRouter } from 'next/navigation';
 import GlidingStack from './GlidingStack';
 import Code from "@/assets/code.png"
+import Bg from "@/assets/bg2.png"
+import Link from 'next/link';
 
 const Hero = () => {
     const router = useRouter()
@@ -14,7 +16,7 @@ const Hero = () => {
 
 
     return (
-        <div className='relative pt-10'>
+        <div style={{ backgroundImage: `linear-gradient(to bottom, rgba(10,10,10,0.8), rgba(10,10,10,0.5), rgba(10,10,10,1)), url(${Bg.src})` }} className='relative pt-30 md:pt-40 bg-no-repeat bg-center bg-cover'>
             <div className='pad-auto relative'>
 
 
@@ -25,12 +27,19 @@ const Hero = () => {
                         <div >
                             <h1 className='text-3xl md:text-6xl mx-auto font-semibold max-w-200 leading-10 mb-6 md:leading-18 '>
                                 Transforming Ideas into Digital Realities                     </h1>
-                            <p className='text-white/80 mx-auto max-w-120'>I Build Responsive, Modern, and Scalable Solutions that connects Bussiness with people</p>
+                            <p className='text-white/80 mx-auto max-w-120'>I Build Responsive, Modern, and Scalable Software Solutions that connects Bussiness with people</p>
 
                         </div>
                         <div className='flex item-center md:justify-center mt-8 gap-4'>
-                            <Button>See my work</Button>
-                            <Button variant='white'>Get in Touch</Button>
+
+                            <Link href="/portfolio">
+                                <Button>View my work</Button>
+
+                            </Link>
+                            <Link href="/contact">
+                                <Button variant='white'>Get in Touch</Button>
+                            </Link>
+
                         </div>
 
 

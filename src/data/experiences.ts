@@ -29,6 +29,6 @@ export const experiences = [
     type: "Onsite",
     description:
       "Designed marketing assets (banners, book covers, flyers) that improved client brand visibility and contributed to a 25% increase in campaign engagement.",
-    year: "2020 – 2021",
+    year: "2019 – 2022",
   },
 ];

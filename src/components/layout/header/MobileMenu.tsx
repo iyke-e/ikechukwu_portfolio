@@ -15,7 +15,7 @@ const MobileMenu = ({ menuOpen, setMenuOpen, toggleScroll }: MobileMenuProp) => 
         toggleScroll()
     }
     return (
-        <div className='space-y-12 px-4 py-4 absolute w-full h-[calc(100dvh-60px)] bg-background/70 backdrop-blur-sm'>
+        <div className='space-y-12 px-4 py-4 absolute w-full h-[calc(100dvh-60px)] bg-background/70 backdrop-blur-lg'>
             <div >
                 <p className='text-sm text-gray-400 mb-6'>Menu</p>
                 <nav >

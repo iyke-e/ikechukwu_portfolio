@@ -4,9 +4,9 @@ import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 
 const Connect = () => {
     return (
-        <div className='pad-auto py-14 space-y-6 items-center'>
+        <div className='pad-auto border-t border-white/10 py-14 space-y-6 items-center'>
 
-            <h1 className='text-4xl md:text-7xl leading-12 md:leading-20 text-center '>Lets Connect <br /> There</h1>
+            <h1 className='text-4xl md:text-7xl leading-12 md:leading-20 text-center '>Ready to bring your vision to life?<br /> Let's make it happen</h1>
 
             <div className='grid  place-content-center'>
                 <Link href="/contact" className='text-center' >

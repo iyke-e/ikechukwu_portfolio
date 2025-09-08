@@ -1,21 +1,20 @@
 import { experiences } from '@/data/experiences'
 import React from 'react'
+import Bg2 from "@/assets/bg3.jpg"
 
 const Experience = () => {
     return (
-        <div className='pt-10 '>
-            <div className='pad-auto mb-6'>
-                <p className='mb-6 px-4 py-2 bg-gradient-to-r from-white/20  to-white/0 w-fit '>Experience</p>
-                <div className='md:flex justify-between items-start'>
-                    <h1 className='text-[32px] md:text-5xl max-w-80 md:max-w-140 md:leading-16 mb-4'>My Most Recent Experiences </h1>
-                </div>
+        <div style={{ backgroundImage: `linear-gradient(to bottom, rgba(10,10,10,1), rgba(10,10,10,0.5),  rgba(10,10,10,0.5), rgba(10,10,10,1)), url(${Bg2.src})` }} className='pt-10 '>
+            <div className='pad-auto mb-16'>
+                <p className=' md:mb-6 text-center text-blue-400 '>Experience</p>
+                <h1 className='text-[32px] md:text-5xl text-center'>Executive Summary </h1>
             </div>
-            <div className='grid'>
+            <div className='grid gap-10 md:gap-14 md:mx-20 pad-auto'>
                 {
-                    experiences.slice(0, 1).map((item, index) => (
-                        <div key={index} className={`${index % 2 === 0 ? "bg-white/2 " : ""} pad-auto py-6 md:py-1 md:grid md:grid-cols-[5fr_4fr] md:items-center`}>
-                            <div className='mb-4 lg:mb-0'>
-                                <h3 className='font-bold mb-2 text-lg md:text-xl'>{item.role} at {item.company} ({item.type})</h3>
+                    experiences.map((item, index) => (
+                        <div key={index} className={`pad-auto   py-6 bg-white/10 backdrop-blur-sm md:border ${index % 2 === 1 ? "ml-auto" : ""} md:border-white/20 max-w-[800px] rounded-2xl md:shadow md:py-20`}>
+                            <div className='mb-6 lg:mb-0'>
+                                <h3 className='font-bold mb-4 text-lg md:text-xl'>{item.role} at {item.company} ({item.type})</h3>
                                 <p className='text-white/70'>{item.description}</p>
                             </div>
 

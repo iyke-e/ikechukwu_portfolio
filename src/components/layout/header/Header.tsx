@@ -28,8 +28,8 @@ const Header = () => {
 
 
     return (
-        <header className='relative isolation-auto z-99999'>
-            <div className='flex justify-between items-center h-15 md:h-20 pad-auto'>
+        <header className='fixed inset-x-0 bg-background/30 backdrop-blur-xs top-0 isolation-auto z-99999'>
+            <div className='flex justify-between items-center h-15  pad-auto'>
                 <LogoIcon onClick={() => setMenuOpen(false)} />
                 <div onClick={() => { setMenuOpen(!menuOpen), toggleScroll() }} className='flex gap-2 items-center md:hidden'>
                     <p className='text-lg leading-0'>Menu</p>

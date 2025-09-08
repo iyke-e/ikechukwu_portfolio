@@ -8,10 +8,11 @@ const AboutMe = () => {
     return (
         <div className='py-10 mt-10'>
             <div className='pad-auto mb-6'>
-                <p className='mb-6 px-4 py-2 bg-gradient-to-r from-white/20  to-white/0 w-fit '>About Me</p>
+                <div className='pad-auto mb-16'>
+                    <p className=' md:mb-6 text-center text-red-400 '>About Me</p>
+                    <h1 className='text-[32px] md:text-5xl text-center'>The person behind the code.</h1>
+                </div>
 
-
-                <h1 className='text-[32px] md:text-5xl text-center mb-4'>The person behind the code. </h1>
 
 
 

@@ -5,14 +5,14 @@ import Link from "next/link";
 
 import LogoDark from "@/assets/logo.svg";
 
-const LogoIcon = ({ size = 80, onClick }: { size?: number, onClick?: (item: boolean) => void }) => {
+const LogoIcon = ({ size = 80, onClick }: { size?: number, onClick?: () => void }) => {
 
 
 
     return (
         <Link href={"/"}>
             <Image
-                onClick={() => onClick}
+                onClick={onClick}
                 width={size}
                 height={size}
                 src={LogoDark}

@@ -9,7 +9,7 @@
   --scrollbar-track-color: #f0f0f0;
 
   /* Dark mode overrides */
-  --background: #0a0a0a;
+  --background: rgb(10, 10, 10);
   --surface: #1a1a1a;
   --foreground: #ededed;
   --foreground-secondary: #b3b3b3;
