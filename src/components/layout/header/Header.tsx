@@ -24,12 +24,17 @@ const Header = () => {
     docBody.classList.toggle("stop-scroll");
   };
 
+  const removeScroll = () => {
+    if (!docBody) return;
+    docBody.classList.remove("stop-scroll");
+  };
+
   return (
     <header className="fixed inset-x-0 bg-background/30 backdrop-blur-xs top-0 isolation-auto z-99999">
       <div className="flex justify-between items-center h-15  pad-auto">
         <LogoIcon
           onClick={() => {
-            setMenuOpen(false), toggleScroll();
+            setMenuOpen(false), removeScroll();
           }}
         />
         <div
@@ -83,7 +88,7 @@ const Header = () => {
         <MobileMenu
           menuOpen={menuOpen}
           setMenuOpen={setMenuOpen}
-          toggleScroll={toggleScroll}
+          removeScroll={removeScroll}
         />
       )}
     </header>
