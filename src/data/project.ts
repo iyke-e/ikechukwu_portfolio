@@ -37,7 +37,7 @@ export interface ProjectProp {
   sourceUrl: string;
   imageUrl: string;
   tags: string[];
-  projectType: string[]; // <- allow multiple categories
+  projectType: string[];
 }
 
 export const project: ProjectProp[] = [
@@ -100,43 +100,5 @@ export const project: ProjectProp[] = [
       "https://ucarecdn.com/fe937da7-2b4b-464a-be23-aef8ae6ca059/personalportfoliov20.png",
     tags: ["React", "Frontend", "REST API"],
     projectType: ["Portfolio/Branding"],
-  },
-  {
-    featured: true,
-    category: "web",
-    name: "Space Tourism Website",
-    description:
-      "Complete website using React and SCSS, providing user-friendly space information with responsive design and visual appeal.",
-    stack: [
-      { name: "React", icon: ReactIcon },
-      { name: "CSS/SCSS", icon: CSS },
-      { name: "Vite", icon: Vite },
-      { name: "HTML", icon: HTML },
-    ],
-    liveUrl: "https://iykedev-space-website.netlify.app/",
-    sourceUrl: "https://github.com/iyke-e/space-tourism-website",
-    imageUrl:
-      "https://max.ucarecdn.com/94a2388c-2a4a-4c2a-9d8c-68ea5d95f62a/-/preview/812x520/",
-    tags: ["React", "Frontend", "Responsive"],
-    projectType: ["UI/Design"],
-  },
-  {
-    featured: false,
-    category: "web",
-    name: "URL Shortening API Landing Page",
-    description:
-      "Web app for shortening URLs with CleanURI API, featuring browser storage, error validation, and responsive design.",
-    stack: [
-      { name: "React", icon: ReactIcon },
-      { name: "Tailwind", icon: Tailwind },
-      { name: "JavaScript", icon: Js },
-      { name: "Vite", icon: Vite },
-    ],
-    liveUrl: "https://iyke-e.github.io/url-shortening-api",
-    sourceUrl: "https://github.com/iyke-e/url-shortening-api",
-    imageUrl:
-      "https://ucarecdn.com/2f7868fb-e333-4be6-a52b-73f8c274eaa4/urlshortening.png",
-    tags: ["API", "Frontend", "Responsive"],
-    projectType: ["Web Apps"],
   },
 ];

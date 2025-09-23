@@ -4,15 +4,15 @@ export const experiences = [
     company: "Rise Academy",
     type: "Remote",
     description:
-      "Built cross-platform mobile features in React Native, including reusable UI components, improving development efficiency by 20%.",
-    year: "Jan 2025 – Present",
+      "Delivered production-ready React Native features with Expo, built 10+ reusable UI components adopted across projects, and improved app consistency and development speed.",
+    year: "Jan 2025 – July 2025",
   },
   {
-    role: "Frontend Development Intern",
+    role: "Frontend Developer",
     company: "Integrated Software Services Ltd (ISSL)",
     type: "Onsite",
     description:
-      "Assisted in building and maintaining responsive web pages using HTML, CSS, and JavaScript, reducing page load times by 15% through optimization.",
+      "Built a production-ready web project using Next.js, React, Tailwind CSS, and supporting libraries. Delivered fully responsive interfaces, integrated APIs, and optimized performance—achieving a 15% faster load time compared to the legacy stack.",
     year: "May 2024 - Nov 2024",
   },
   {
@@ -28,7 +28,7 @@ export const experiences = [
     company: "Miracle Ventures",
     type: "Onsite",
     description:
-      "Designed marketing assets (banners, book covers, flyers) that improved client brand visibility and contributed to a 25% increase in campaign engagement.",
+      "Created 50+ marketing assets (banners, book covers, flyers, wedding invites etc.) that strengthened client branding and drove a 25% boost in campaign engagement.",
     year: "2019 – 2022",
   },
 ];
