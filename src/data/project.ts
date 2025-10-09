@@ -17,12 +17,13 @@ import Js from "@/assets/javascript.svg";
 import Ts from "@/assets/typescript.svg";
 import Vscode from "@/assets/vscode.svg";
 import Vercel from "@/assets/vercel.svg";
+import Fintrack from "@/assets/projectsimg/fintrack.png";
 
 import Tailwind from "@/assets/tailwindcss.svg";
 import ReactIcon from "@/assets/react.svg";
 import type { StaticImageData } from "next/image";
 
-type StackProp = {
+export type StackProp = {
   name: string;
   icon: StaticImageData | string;
 };
@@ -35,12 +36,30 @@ export interface ProjectProp {
   stack: StackProp[];
   liveUrl: string;
   sourceUrl: string;
-  imageUrl: string;
+  imageUrl: string | StaticImageData;
   tags: string[];
   projectType: string[];
 }
 
 export const project: ProjectProp[] = [
+  {
+    featured: true,
+    category: "mobile",
+    name: "Fintrack",
+    description:
+      "FinTrack is a personal finance management application that allows users to track income and expenses, set and monitor budgets, and visualize financial trends over time. The app provides real-time data insights, intuitive dashboards, and secure data storage, helping users understand and manage their financial habits effectively.",
+    stack: [
+      { name: "Expo", icon: Expo },
+      { name: "TypeScript", icon: Ts },
+      { name: "Supabase", icon: Supabase },
+      { name: "Zustand", icon: Zustand },
+    ],
+    liveUrl: "https://github.com/iyke-e/fintrackapp",
+    sourceUrl: "https://github.com/iyke-e/fintrackapp",
+    imageUrl: Fintrack.src,
+    tags: ["Fullstack", "Dashboards", "Collaboration"],
+    projectType: ["CMS", "Fullstack", "Dashboard"],
+  },
   {
     featured: true,
     category: "web",
@@ -82,7 +101,7 @@ export const project: ProjectProp[] = [
     projectType: ["Web Apps", "Fullstack", "Dashboard"],
   },
   {
-    featured: true,
+    featured: false,
     category: "web",
     name: "Developer Portfolio",
     description:

@@ -1,33 +1,27 @@
-import React from 'react'
-import ProjectAnimatedSection from './old/ProjectAnimatedSection'
-import Button from '@/components/ui/Button'
-import Link from 'next/link'
-import ProjectSection from './ProjectSection'
+import React from "react";
+import Button from "@/components/ui/Button";
+import Link from "next/link";
+import SectionHeader from "@/components/ui/SectionHeader";
+import FeaturedProjects from "./FeaturedProjects";
 
 const Projects = () => {
-    return (
-        <div className='py-20'>
-            <div className='pad-auto'>
-                <div className='pad-auto mb-16'>
-                    <p className=' md:mb-6 text-green-500 text-center'>Porfolio</p>
-                    <h1 className='text-[32px] md:text-5xl text-center'>Recent Case Studies </h1>
-                </div>
+  return (
+    <div className="py-10">
+      <div className="pad-auto">
+        <SectionHeader
+          title="Feature Projects"
+          subtitle="Recent Case Studies"
+        />
+      </div>
+      <FeaturedProjects />
 
+      <div className="grid mt-6 place-content-center">
+        <Link href="/portfolio">
+          <Button variant="white">See All project</Button>
+        </Link>
+      </div>
+    </div>
+  );
+};
 
-            </div>
-            {/* <ProjectAnimatedSection /> */}
-            <ProjectSection />
-
-            <div className="grid mt-6 place-content-center">
-                <Link href="/portfolio">
-                    <Button variant='white'>View More</Button>
-
-                </Link>
-            </div>
-
-
-        </div>
-    )
-}
-
-export default Projects
+export default Projects;

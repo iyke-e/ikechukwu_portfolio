@@ -1,42 +1,67 @@
-import React, { useEffect, useState } from 'react';
-import ProjectCard from './ProjectCard';
-import ProjectDetailModal from './ProjectDetailModal';
-import { ProjectProp } from '@/data/project';
+import React, { useEffect, useState } from "react";
+import { ProjectCard } from "../home/Project/FeaturedProjects";
+import ProjectDetailModal from "./ProjectDetailModal";
+import { ProjectProp } from "@/data/project";
 
 const ProjectsDisplay = ({ project }: { project: ProjectProp[] }) => {
-    const [openModal, setOpenModal] = useState(false);
-    const [selectedProject, setSelectedProject] = useState<ProjectProp | null>(null);
+  const [openModal, setOpenModal] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<ProjectProp | null>(
+    null
+  );
+  const [docBody, setDocBody] = useState<HTMLElement | null>(null);
 
-    const [docBody, setDocBody] = useState<HTMLElement | null>(null);
+  useEffect(() => {
+    setDocBody(document.body);
+  }, []);
 
-    useEffect(() => {
-        setDocBody(document.body);
-    }, []);
-
-    const toggleScroll = () => {
-        if (!docBody) return;
-        docBody.classList.toggle("stop-scroll");
-        console.log(docBody)
-    };
-    const handleOpenModal = (item: ProjectProp) => {
-        setSelectedProject(item);
-        setOpenModal(true);
-        toggleScroll()
-    };
-
-    return (
-        <div className="py-5 mt-8 grid gap-x-6 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
-            {project?.map((item, index) => (
-                <ProjectCard key={index} item={item} onClick={() => handleOpenModal(item)} />
-            ))}
-
-            <ProjectDetailModal
-                isOpen={openModal}
-                onClose={() => { setOpenModal(false), toggleScroll() }}
-                project={selectedProject}
-            />
-        </div>
+  const toggleScroll = (enable?: boolean) => {
+    if (!docBody) return;
+    docBody.classList.toggle(
+      "stop-scroll",
+      enable ?? !docBody.classList.contains("stop-scroll")
     );
+  };
+
+  const handleOpenModal = (item: ProjectProp) => {
+    setSelectedProject(item);
+    setOpenModal(true);
+    toggleScroll(true);
+  };
+
+  const handleCloseModal = () => {
+    setOpenModal(false);
+    toggleScroll(false);
+  };
+
+  return (
+    <div className="">
+      <div>
+        {project.map((item, index) => (
+          <div
+            key={index}
+            className={
+              index === project.length - 1
+                ? ""
+                : "border-b border-foreground/20"
+            }
+          >
+            <ProjectCard
+              liveUrl={item.liveUrl}
+              stack={item.stack}
+              title={item.name}
+              description={item.description}
+              imagebg={item.imageUrl}
+            />
+          </div>
+        ))}
+      </div>
+      <ProjectDetailModal
+        isOpen={openModal}
+        onClose={handleCloseModal}
+        project={selectedProject}
+      />
+    </div>
+  );
 };
 
 export default ProjectsDisplay;

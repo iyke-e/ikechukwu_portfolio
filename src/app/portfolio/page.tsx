@@ -1,31 +1,29 @@
-"use client"
+"use client";
 
-import FilterNav from '@/components/portfolio/FilterNav'
-import ProjectsDisplay from '@/components/portfolio/ProjectsDisplay'
-import { project } from '@/data/project'
-import React, { useState } from 'react'
+import FilterNav from "@/components/portfolio/FilterNav";
+import ProjectsDisplay from "@/components/portfolio/ProjectsDisplay";
+import PagesHero from "@/components/ui/PagesHero";
+import { project } from "@/data/project";
+import React, { useState } from "react";
 
 const Portfolio = () => {
-    const [acitveFilter, setActiveFilter] = useState("All")
+  const [acitveFilter, setActiveFilter] = useState("All");
 
-    const filterResult = acitveFilter === "All" ? project : project.filter(item => item.projectType.includes(acitveFilter))
-    return (
-        <div className='pad-auto py-4'>
-            <p className='mb-6 px-4 py-2 rounded-full gradientAnimate w-fit '>Portfolio</p>
+  const filterResult =
+    acitveFilter === "All"
+      ? project
+      : project.filter((item) => item.projectType.includes(acitveFilter));
+  return (
+    <div className="">
+      <PagesHero
+        title="Portfolio."
+        subtitle="A collection of web and mobile projects showcasing clean code,
+          responsive design, and seamless user experiences"
+      />
 
-            <h1 className='text-3xl mb-4 md:text-5xl max-w-200 md:leading-18'>
-                A collection of work that tells my story of learning, building, and evolving.
-            </h1>
-            <p className='text-base md:text-lg max-w-200 text-white/80'>
-                From landing pages to full-featured web apps, each project reflects my growth as a developer, my passion for clean design, and my drive to create meaningful digital experiences.
-            </p>
+      <ProjectsDisplay project={filterResult} />
+    </div>
+  );
+};
 
-            <div className='mt-8'>
-                <ProjectsDisplay project={filterResult} />
-
-            </div>
-        </div>
-    )
-}
-
-export default Portfolio
+export default Portfolio;

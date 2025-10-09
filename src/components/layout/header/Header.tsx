@@ -37,6 +37,8 @@ const Header = () => {
             setMenuOpen(false), removeScroll();
           }}
         />
+
+        {/* mobile menu toggle */}
         <div
           onClick={() => {
             setMenuOpen(!menuOpen), toggleScroll();
@@ -50,6 +52,8 @@ const Header = () => {
             <IoMenu className="w-5 h-5" />
           )}
         </div>
+
+        {/* desktop navigation */}
 
         <nav className="hidden md:block">
           <ul className="flex gap-4 items-center">
@@ -72,13 +76,8 @@ const Header = () => {
         </nav>
 
         <div className="hidden md:block   cursor-pointer">
-          <a target="_blank" href={"/Egwim_Ikechukwu_Resume.pdf"}>
-            <Button
-              variant="white"
-              className="rotate-10 transition duration-200 cursor-pointer hover:rotate-0"
-            >
-              Resume
-            </Button>
+          <a target="_blank" href={"/Ikechukwu_Egwim_cv.pdf"}>
+            <Button>Resume</Button>
           </a>
         </div>
       </div>
@@ -98,7 +97,6 @@ const Header = () => {
 export default Header;
 
 const navLinks = [
-  { name: "Home", href: "/" },
   { name: "Portfolio", href: "/portfolio" },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },

@@ -17,7 +17,7 @@ const MobileMenu = ({
     removeScroll();
   };
   return (
-    <div className="space-y-12 px-4 py-4 absolute w-full h-[calc(100dvh-60px)] bg-background/70 backdrop-blur-lg">
+    <div className="space-y-12 px-4 py-4 absolute w-full h-[calc(100dvh-60px)] bg-background">
       <div>
         <p className="text-sm text-gray-400 mb-6">Menu</p>
         <nav>
@@ -60,7 +60,7 @@ const MobileMenu = ({
               <a
                 className="text-2xl hover:text-gray-500"
                 target="_blank"
-                href={"/Egwim_Ikechukwu_Resume.pdf"}
+                href={"/Ikechukwu_Egwim_cv.pdf"}
               >
                 Resume
               </a>
