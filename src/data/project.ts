@@ -56,7 +56,8 @@ export const project: ProjectProp[] = [
     ],
     liveUrl: "https://github.com/iyke-e/fintrackapp",
     sourceUrl: "https://github.com/iyke-e/fintrackapp",
-    imageUrl: Fintrack.src,
+    imageUrl:
+      "https://ucarecdn.com/61416051-b0bf-433e-814e-e16714d06ec9/fintrack.png",
     tags: ["Fullstack", "Dashboards", "Collaboration"],
     projectType: ["CMS", "Fullstack", "Dashboard"],
   },
