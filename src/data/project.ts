@@ -57,12 +57,31 @@ export const project: ProjectProp[] = [
     liveUrl: "https://github.com/iyke-e/fintrackapp",
     sourceUrl: "https://github.com/iyke-e/fintrackapp",
     imageUrl:
-      "https://ucarecdn.com/61416051-b0bf-433e-814e-e16714d06ec9/fintrack.png",
+      "https://ucarecdn.com/61416051-b0bf-433e-814e-e16714d06ec9/-/preview/1000x750/",
     tags: ["Fullstack", "Dashboards", "Collaboration"],
     projectType: ["CMS", "Fullstack", "Dashboard"],
   },
   {
     featured: true,
+    category: "mobile",
+    name: "Instant Drivers Lincense",
+    description:
+      "InstantDL is a prototype web application that reimagines how users apply for a driver’s license. It simulates a smooth, end-to-end experience where users can upload documents, fill in personal details, and instantly receive a digital license. Built with React and Vite, it highlights secure form handling, intuitive user flow, and a responsive, mobile-friendly design that demonstrates how modern web tools can simplify real-world processes.",
+    stack: [
+      { name: "React", icon: ReactIcon },
+      { name: "Tailwind", icon: Tailwind },
+      { name: "Vite", icon: Vite },
+      { name: "Vercel", icon: Vercel },
+    ],
+    liveUrl: "https://instantdl.vercel.app",
+    sourceUrl: "https://github.com/iyke-e/drivers_license",
+    imageUrl:
+      "https://ucarecdn.com/75801f7d-0d8c-4156-9778-55488d2f0ac5/-/preview/1000x666/",
+    tags: ["Fullstack", "Dashboards", "Collaboration"],
+    projectType: ["CMS", "Fullstack", "Dashboard"],
+  },
+  {
+    featured: false,
     category: "web",
     name: "ShowcaseHub",
     description:
