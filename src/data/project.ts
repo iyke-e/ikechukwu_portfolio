@@ -44,6 +44,24 @@ export interface ProjectProp {
 export const project: ProjectProp[] = [
   {
     featured: true,
+    category: "web",
+    name: "Estatein",
+    description:
+      "Estatein is a modern real-estate platform built to browse, filter, and view property listings seamlessly. Designed with a responsive UI, smooth animations, and clean architecture for optimal performance. Focused on usability and visual clarity, it showcases a professional approach to frontend development with attention to design and user experience.",
+    stack: [
+      { name: "Next.js", icon: Next },
+      { name: "TypeScript", icon: Ts },
+      { name: "TailwindCss", icon: Tailwind },
+    ],
+    liveUrl: "https://estatien-i.vercel.app",
+    sourceUrl: "https://github.com/iyke-e/estatien",
+    imageUrl:
+      "https://ucarecdn.com/9a5c5f84-dd26-4d52-b541-f608fc3a9343/-/preview/1000x659/",
+    tags: ["Fullstack", "Dashboards", "Collaboration"],
+    projectType: ["CMS", "Fullstack", "Dashboard"],
+  },
+  {
+    featured: true,
     category: "mobile",
     name: "Fintrack",
     description:
@@ -81,7 +99,7 @@ export const project: ProjectProp[] = [
     projectType: ["CMS", "Fullstack", "Dashboard"],
   },
   {
-    featured: false,
+    featured: true,
     category: "web",
     name: "ShowcaseHub",
     description:
@@ -101,7 +119,7 @@ export const project: ProjectProp[] = [
     projectType: ["CMS", "Fullstack", "Dashboard"],
   },
   {
-    featured: true,
+    featured: false,
     category: "web",
     name: "CampusCrib",
     description:

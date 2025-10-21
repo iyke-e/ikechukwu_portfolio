@@ -23,12 +23,13 @@ const Hero = () => {
             </p>
             <div>
               <h1 className="text-3xl md:text-6xl mx-auto font-semibold max-w-210 leading-10 mb-6 md:leading-18 ">
-                Crafting Digital Experiences That Speak for Themselves{" "}
+                Building Fast, Scalable Web & Mobile Experiences
               </h1>
               <p className="text-white/80 mx-auto max-w-160">
-                Every line of code is written with clarity and intent. The goal
-                is simple: build web experiences that are fast, resilient, and
-                visually engaging without compromise.
+                I'm Ikechukwu, a frontend developer focused on creating fast,
+                intuitive, and visually refined interfaces for web and mobile. I
+                build solutions that balance performance, design, and real-world
+                usability.
               </p>
             </div>
             <div className="flex item-center md:justify-center mt-8 gap-4">
