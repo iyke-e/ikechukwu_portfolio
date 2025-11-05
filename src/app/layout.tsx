@@ -2,10 +2,15 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/layout/header/Header";
 import Footer from "@/components/layout/Footer";
-import Chatbot from "@/components/chatbot/Chatbot";
+import { gsap } from "gsap";
+
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitText } from "gsap/SplitText";
+
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 export const metadata: Metadata = {
-  title: "Iykee Portfolio",
+  title: "Ikechukwu Egwim Portfolio Website",
   description:
     "Explore Ikechukwu’s portfolio: innovative web and mobile apps, frontend development, and projects showcasing modern software solutions.",
   icons: {

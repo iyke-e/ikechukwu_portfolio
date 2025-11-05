@@ -19,8 +19,8 @@
   --disabled: #555555;
 
   /* Accent + states */
-  --accent: #3b82f6;
-  --accent-hover: #3b82f6;
+  --accent: #6b6b6b;
+  --accent-hover: #6b6b6b;
   --success: #22c55e;
   --warning: #facc15;
   --error: #f87171;

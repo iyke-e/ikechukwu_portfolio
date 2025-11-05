@@ -7,12 +7,8 @@ import FeaturedProjects from "./FeaturedProjects";
 const Projects = () => {
   return (
     <div className="py-10">
-      <div className="pad-auto">
-        <SectionHeader
-          title="Feature Projects"
-          subtitle="Recent Case Studies"
-        />
-      </div>
+      <SectionHeader title="Feature Projects" subtitle="Recent Case Studies" />
+
       <FeaturedProjects />
 
       <div className="grid mt-6 place-content-center">

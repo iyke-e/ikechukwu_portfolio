@@ -11,7 +11,7 @@ const colors = [
 ];
 
 interface SectionHeaderProps {
-  subtitle: string;
+  subtitle?: string;
   title: string;
 }
 
@@ -25,10 +25,8 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({ subtitle, title }) => {
 
   return (
     <div className="pad-auto">
-      <div className="pad-auto mb-10">
-        <p className={`mb-2 text-center ${randomColor}`}>{subtitle}</p>
-        <h1 className="text-[32px] md:text-5xl text-center">{title}</h1>
-      </div>
+      <p className={`md:mb-2 text-center ${randomColor}`}>{subtitle}</p>
+      <h1 className="text-[32px] md:text-5xl text-center">{title}</h1>
     </div>
   );
 };

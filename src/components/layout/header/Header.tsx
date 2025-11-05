@@ -10,14 +10,19 @@ import { usePathname } from "next/navigation";
 import LogoIcon from "@/components/ui/LogoIcon";
 
 const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
-
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [visible, setVisible] = useState(false);
   const [docBody, setDocBody] = useState<HTMLElement | null>(null);
 
   useEffect(() => {
     setDocBody(document.body);
   }, []);
+
+  const toggleMenu = () => {
+    if (!menuOpen) setVisible(true);
+    setMenuOpen(!menuOpen);
+  };
 
   const toggleScroll = () => {
     if (!docBody) return;
@@ -41,12 +46,12 @@ const Header = () => {
         {/* mobile menu toggle */}
         <div
           onClick={() => {
-            setMenuOpen(!menuOpen), toggleScroll();
+            toggleMenu(), toggleScroll();
           }}
           className="flex gap-2 items-center md:hidden"
         >
           <p className="text-lg leading-0">Menu</p>
-          {menuOpen ? (
+          {visible ? (
             <IoClose className="w-5 h-5" />
           ) : (
             <IoMenu className="w-5 h-5" />
@@ -65,7 +70,7 @@ const Header = () => {
                     href={link.href}
                     className={`${
                       isActive ? "text-accent" : ""
-                    } hover:text-accent-hover text-sm px-4 py-2 rounded-lg transition duration-600`}
+                    } hover:text-accent-hover font-semibold text-sm px-4 py-2 rounded-lg transition duration-600`}
                   >
                     {link.name}
                   </Link>
@@ -81,10 +86,11 @@ const Header = () => {
           </a>
         </div>
       </div>
-      {!menuOpen ? (
+      {!visible ? (
         ""
       ) : (
         <MobileMenu
+          onCloseFinish={() => setVisible(false)}
           menuOpen={menuOpen}
           setMenuOpen={setMenuOpen}
           removeScroll={removeScroll}
