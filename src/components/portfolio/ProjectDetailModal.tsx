@@ -80,10 +80,16 @@ const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
             {/* Left Sticky Panel */}
             <div className="lg:col-span-5 flex flex-col gap-6 lg:sticky lg:top-0 h-fit">
               {activeProject?.imageUrl && (
-                <div className="w-full aspect-video rounded-2xl overflow-hidden border border-white/10 shadow-lg relative group">
+                <div className="w-full aspect-video rounded-2xl overflow-hidden border border-white/10 shadow-lg relative bg-black/40">
+                  {/* Blurred background cover */}
                   <div
                     style={{ backgroundImage: `url(${activeProject.imageUrl})` }}
-                    className="w-full h-full bg-center bg-cover transition-transform duration-700 group-hover:scale-105"
+                    className="absolute inset-0 bg-center bg-cover blur-md scale-110 opacity-80"
+                  ></div>
+                  {/* Contained foreground image */}
+                  <div
+                    style={{ backgroundImage: `url(${activeProject.imageUrl})` }}
+                    className="absolute inset-0 bg-center bg-contain bg-no-repeat"
                   ></div>
                 </div>
               )}

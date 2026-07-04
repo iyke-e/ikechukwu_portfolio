@@ -30,11 +30,19 @@ export const ProjectCard = ({
   const targetAttr = isMobileApp ? undefined : "_blank";
 
   return (
-    <div className="grid md:grid-cols-2 py-14 pad-auto">
-      <div
-        style={{ backgroundImage: `url(${typeof imagebg === 'string' ? imagebg : imagebg.src})` }}
-        className="bg-no-repeat bg-center bg-cover h-70 md:h-110 w-full"
-      ></div>
+    <div className="grid md:grid-cols-2 py-14 pad-auto items-center">
+      <div className="relative h-70 md:h-110 w-full overflow-hidden rounded-2xl border border-white/5 bg-black/20">
+        {/* Blurred background cover */}
+        <div
+          style={{ backgroundImage: `url(${typeof imagebg === 'string' ? imagebg : imagebg.src})` }}
+          className="absolute inset-0 bg-no-repeat bg-center bg-cover blur-md scale-110 opacity-80"
+        ></div>
+        {/* Contained foreground image */}
+        <div
+          style={{ backgroundImage: `url(${typeof imagebg === 'string' ? imagebg : imagebg.src})` }}
+          className="absolute inset-0 bg-no-repeat bg-center bg-contain"
+        ></div>
+      </div>
 
       <div className=" py-4 md:pl-8">
         <h1 className="text-4xl mb-6">{title}</h1>
