@@ -76,7 +76,7 @@ export const stackList: StackItem[] = [
   // ===== MOBILE =====
   { name: "Expo", icon: ExpoGo, category: "mobile" },
   { name: "React Native", icon: ReactIcon, category: "mobile" },
-  // { name: "Flutter", icon: Flutter, category: "mobile" },
+  { name: "Flutter", icon: Flutter, category: "mobile" },
   { name: "Android", icon: Android, category: "mobile" },
   { name: "iOS", icon: IOS, category: "mobile" },
 

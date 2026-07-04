@@ -27,9 +27,13 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head></head>
       <body className={`antialiased`}>
-        <Header />
-        {children}
-        <Footer />
+        <div className="relative min-h-screen noise-bg w-full">
+          <Header />
+          <div className="max-w-[1400px] mx-auto w-full px-4 md:px-8 pt-15">
+            {children}
+          </div>
+          <Footer />
+        </div>
       </body>
     </html>
   );

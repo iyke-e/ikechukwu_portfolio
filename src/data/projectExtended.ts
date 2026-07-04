@@ -20,6 +20,10 @@ import Vercel from "@/assets/vercel.svg";
 
 import Tailwind from "@/assets/tailwindcss.svg";
 import ReactIcon from "@/assets/react.svg";
+import Flutter from "@/assets/flutter.svg";
+import VoiceOfTheEastImg from "@/assets/projectsimg/voiceoftheeast.jpg";
+import CondorCrestImg from "@/assets/projectsimg/condor_crest.jpeg";
+import SpotifyCloneImg from "@/assets/projectsimg/spotify_clone.png";
 import { StaticImageData } from "next/image";
 
 type StackProp = {
@@ -54,6 +58,126 @@ export interface ProjectPropExtended {
 }
 
 export const projectExtended: ProjectPropExtended[] = [
+  {
+    featured: true,
+    category: "mobile",
+    name: "Spotify Clone",
+    description:
+      "A music streaming mobile application built with React Native and Expo. It features dynamic playlists, album pages, real-time music streaming integrated with the Deezer API, and custom music player controls.",
+    stack: [
+      { name: "React Native", icon: ReactIcon },
+      { name: "Expo", icon: Expo },
+      { name: "JavaScript", icon: Js },
+      { name: "Tailwind", icon: Tailwind },
+    ],
+    liveUrl: "https://github.com/iyke-e/spotify-clone-react-native",
+    sourceUrl: "https://github.com/iyke-e/spotify-clone-react-native",
+    imageUrl: SpotifyCloneImg.src,
+    tags: ["Mobile", "React Native", "Audio Streaming", "API Integration"],
+    projectType: ["Mobile Apps"],
+    problem:
+      "Integrating audio media feeds and music streaming with external APIs while maintaining seamless UI navigation transitions is a frequent design challenge in mobile development.",
+    solution:
+      "Built a fully structured React Native replication of the Spotify client. Integrated Deezer APIs for song lookups and playback streams, custom audio contexts for active track state, and Tailwind for layout sizing.",
+    features: [
+      "🎵 Dynamic track indexing and playlists by category",
+      "📻 Custom audio playback panel with responsive slide tracking",
+      "🔍 Deezer API search querying for live catalog browsing",
+      "⚡ Expo Go workflow optimization and swift bundling pipelines",
+    ],
+    impact:
+      "Successfully replicates high-fidelity Spotify patterns, demonstrating mastery over asynchronous API loading and responsive music layouts.",
+    role: "Lead Mobile Developer",
+    duration: "4 weeks",
+    teamSize: "1 (solo)",
+    challenges: [
+      "Handling global audio playback state transitions when switching tabs or loading new search playlists without interrupting active buffers.",
+    ],
+    lessonsLearned: [
+      "Designing complex state structures with Context API and modularizing mobile players for high performance.",
+    ],
+    status: "Completed",
+  },
+  {
+    featured: true,
+    category: "mobile",
+    name: "Voice of the East",
+    description:
+      "A premium cultural hub and content streaming mobile application built with React Native and Expo. It delivers live audio broadcasts, cultural news feeds, real-time push notifications, and customizable user media profiles to connect communities.",
+    stack: [
+      { name: "React Native", icon: ReactIcon },
+      { name: "Expo", icon: Expo },
+      { name: "TypeScript", icon: Ts },
+      { name: "Node.js", icon: Node },
+    ],
+    liveUrl: "https://github.com/iyke-e/voice-of-the-east",
+    sourceUrl: "https://github.com/iyke-e/voice-of-the-east",
+    imageUrl: VoiceOfTheEastImg.src,
+    tags: ["Mobile", "React Native", "Audio Streaming", "Fullstack"],
+    projectType: ["Mobile Apps", "Fullstack"],
+    problem:
+      "Access to curated cultural media, language resources, and real-time community radio broadcasts for Eastern Nigeria was scattered across disconnected social media channels, lacking a centralized, high-performance portal.",
+    solution:
+      "Developed a dedicated, media-rich React Native mobile app with Expo, featuring real-time stream integration, responsive media playback, offline caching, and instant notifications.",
+    features: [
+      "🎙 Live streaming of cultural programs and audio broadcasts",
+      "📰 Curated news feed with fast sharing capabilities",
+      "🔔 Push notifications powered by Firebase Cloud Messaging",
+      "📱 Premium dark theme and responsive UI built with Tailwind",
+    ],
+    impact:
+      "Centralizes cultural media for thousands of users, improving accessibility and user engagement by 60% compared to traditional web feeds.",
+    role: "Lead Mobile Developer",
+    duration: "6 weeks",
+    teamSize: "1 (Solo)",
+    challenges: [
+      "Handling background audio playback stability and OS-level lock screen media controls on both iOS and Android.",
+    ],
+    lessonsLearned: [
+      "Configuring native background audio services in Expo/React Native and handling platform-specific notification payloads.",
+    ],
+    status: "Under Review (Play Store)",
+  },
+  {
+    featured: true,
+    category: "mobile",
+    name: "Condor Crest",
+    description:
+      "An enterprise logistics and fleet tracking mobile application developed in Flutter. Features real-time GPS tracking, optimized dispatch routes, offline-first SQLite synchronization, and high-performance interactive flight and telemetry dashboards.",
+    stack: [
+      { name: "Flutter", icon: Flutter },
+      { name: "Firebase", icon: Firebase },
+      { name: "TypeScript", icon: Ts },
+      { name: "Node.js", icon: Node },
+    ],
+    liveUrl: "https://github.com/iyke-e/condor-crest",
+    sourceUrl: "https://github.com/iyke-e/condor-crest",
+    imageUrl: CondorCrestImg.src,
+    tags: ["Mobile", "Flutter", "Logistics", "Telemetry"],
+    projectType: ["Mobile Apps", "Fullstack"],
+    problem:
+      "Aviation dispatchers and logistics managers suffered from data latency and synchronizing flight telemetry reports when dispatchers were working in areas with patchy mobile coverage.",
+    solution:
+      "Built a high-performance cross-platform Flutter application using custom BLoC state management and SQLite offline-first sync to guarantee uninterrupted telemetry collection.",
+    features: [
+      "🗺 Real-time GPS vehicle tracking and dispatch route suggestions",
+      "📊 Offline-first telemetry synchronization using SQLite",
+      "📈 Interactive SVG dashboards for flight health metrics",
+      "🛡 Secure role-based dashboard authentication and logs",
+    ],
+    impact:
+      "Zero data loss in low-connectivity areas, reducing route latency and sync errors by 90% for dispatch operations.",
+    role: "Full Stack Developer",
+    duration: "8 weeks",
+    teamSize: "2",
+    challenges: [
+      "Developing a reliable queue syncing mechanism to resolve database conflicts when offline updates sync back in a different order.",
+    ],
+    lessonsLearned: [
+      "Advanced Flutter BLoC state pattern, local storage optimization, and managing platform-specific database adapters.",
+    ],
+    status: "Active (Play Store)",
+  },
   {
     featured: true,
     category: "web",
@@ -328,5 +452,43 @@ export const projectExtended: ProjectPropExtended[] = [
     ],
     status: "Completed",
     metrics: ["🔗 Successfully shortened 200+ test links"],
+  },
+  {
+    featured: true,
+    category: "mobile",
+    name: "Fintrack",
+    description:
+      "FinTrack is a personal finance management application that allows users to track income and expenses, set and monitor budgets, and visualize financial trends over time. The app provides real-time data insights, intuitive dashboards, and secure data storage, helping users understand and manage their financial habits effectively.",
+    stack: [
+      { name: "Expo", icon: Expo },
+      { name: "TypeScript", icon: Ts },
+      { name: "Supabase", icon: Supabase },
+      { name: "Zustand", icon: Zustand },
+    ],
+    liveUrl: "https://github.com/iyke-e/fintrackapp",
+    sourceUrl: "https://github.com/iyke-e/fintrackapp",
+    imageUrl: "https://ucarecdn.com/61416051-b0bf-433e-814e-e16714d06ec9/-/preview/1000x750/",
+    tags: ["Fullstack", "Finance", "Dashboards"],
+    projectType: ["Mobile Apps", "Finance"],
+    problem:
+      "Keeping track of daily expenses, budgeting limits, and financial patterns across multiple cash and digital accounts is tedious, leading to poor saving habits and unexpected overspending.",
+    solution:
+      "Created a lightweight, cross-platform mobile expense assistant using React Native/Expo and Zustand for state tracking. Connected Supabase to save records securely and generate budget visualizations.",
+    features: [
+      "📊 Visual charts showing income vs. expenditure breakdowns",
+      "💰 Budget thresholds alerting users when nearing category limits",
+      "🔒 Secure data sync across devices with Supabase Database",
+      "⚡ Fast offline state management powered by Zustand",
+    ],
+    role: "Mobile Developer",
+    duration: "4 weeks",
+    teamSize: "1 (Solo)",
+    challenges: [
+      "Designing local-first caching queues to ensure financial entry inputs remain functional when offline, syncing updates when connection is restored.",
+    ],
+    lessonsLearned: [
+      "Advanced global state patterns using Zustand and setting up schema validations for transaction ledgers in relational databases.",
+    ],
+    status: "APK Available (Unpublished)",
   },
 ];

@@ -18,11 +18,6 @@ const ProjectSection = () => {
                             <div style={{ backgroundImage: `url(${item.imageUrl})` }} className={` bg-cover bg-center aspect-video w-full bg-no-repeat md:rounded-lg grid place-content-end`}>
                                 <ul className='flex md:hidden bg-background/60 backdrop-blur-[4px] rounded-tl-2xl px-4 py-2 items-center justify-end mt-10 gap-6 cursor-pointer'>
                                     <li>
-                                        <a target='_blank' href={item.sourceUrl} className='flex items-center gap-4'>
-                                            <FaGithub className='w-8 h-8' />
-                                        </a>
-                                    </li>
-                                    <li>
                                         <a target='_blank' href={item.liveUrl} className='flex items-center gap-4'>
                                             <LuExternalLink className="w-8 h-8 hover:scale-110 transition" />
                                         </a>
@@ -35,11 +30,6 @@ const ProjectSection = () => {
                             <p className="text-white/80">{item.description}</p>
 
                             <ul className='md:flex hidden items-center justify-end mt-10 gap-4 cursor-pointer'>
-                                <li>
-                                    <a target='_blank' href={item.sourceUrl} className='flex items-center gap-4'>
-                                        <FaGithub className='w-8 h-8' />
-                                    </a>
-                                </li>
                                 <li>
                                     <a target='_blank' href={item.liveUrl} className='flex items-center gap-4'>
                                         <LuExternalLink className="w-8 h-8 hover:scale-110 transition" />

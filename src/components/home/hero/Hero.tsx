@@ -35,24 +35,21 @@ const Hero = () => {
       <div className="pad-auto relative justify-between gap-10 flex items-center">
         <div className=" mb-10 md:mb-0">
           <p id="dummytext" className="opacity-10 mb-4   ">
-            React + React Native + Next.js + Redux + Node
+            React + React Native + Flutter + Next.js + Node
           </p>
           <div>
             <h1 className="text-4xl md:text-6xl  font-semibold max-w-220 leading-12 mb-4 md:leading-18 ">
               Turning Code into <br /> Seamless Experiences
             </h1>
             <p id="text" className="text-white/70  max-w-160 ">
-              I'm Ikechukwu Egwim, a Full Stack Developer with a passion for the
-              pixels. Specializing in Frontend development, I build beautiful,
-              high-performance interfaces and the solid infrastructure to power
-              them.
+              I'm Egwim Ikechukwu, a Full Stack Web & Mobile Developer with a passion for building seamless cross-platform experiences. Specializing in React, React Native, and Flutter, I build beautiful, high-performance interfaces and the solid infrastructure to power them.
             </p>
           </div>
           <div className="flex item-center  mt-8 gap-4">
-            <Link href="/portfolio">
+            <Link href="#portfolio">
               <Button>View Portfolio</Button>
             </Link>
-            <Link href="/contact">
+            <Link href="#contact">
               <Button variant="white">Get in Touch</Button>
             </Link>
           </div>

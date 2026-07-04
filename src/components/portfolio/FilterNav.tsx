@@ -34,10 +34,6 @@ export default FilterNav;
 
 const filternav = [
     "All",
-    "Portfolio/Branding",
-    "Landing Page",
     "Web Apps",
-    "PWAs",
-    "CMS-Driven",
-    "E-commerce",
+    "Mobile Apps",
 ];

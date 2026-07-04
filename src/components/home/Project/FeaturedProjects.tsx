@@ -10,6 +10,8 @@ interface ProjectCardProps {
   description: string;
   stack: StackProp[];
   liveUrl: string;
+  onReadMore?: () => void;
+  category?: string;
 }
 
 export const ProjectCard = ({
@@ -18,11 +20,19 @@ export const ProjectCard = ({
   description,
   stack,
   liveUrl,
+  onReadMore,
+  category,
 }: ProjectCardProps) => {
+  const isMobileApp = category === "mobile";
+  const finalLiveUrl = isMobileApp ? "#contact" : liveUrl;
+  const buttonLabel = isMobileApp ? "Request App Access" : "See it in Action";
+  const buttonIcon = isMobileApp ? null : <LuExternalLink className="w-5 h-5" />;
+  const targetAttr = isMobileApp ? undefined : "_blank";
+
   return (
     <div className="grid md:grid-cols-2 py-14 pad-auto">
       <div
-        style={{ backgroundImage: `url(${imagebg})` }}
+        style={{ backgroundImage: `url(${typeof imagebg === 'string' ? imagebg : imagebg.src})` }}
         className="bg-no-repeat bg-center bg-cover h-70 md:h-110 w-full"
       ></div>
 
@@ -42,15 +52,27 @@ export const ProjectCard = ({
             </div>
           ))}
         </div>
-        <a
-          target="_blank"
-          href={liveUrl}
-          className="flex items-center ml-auto mt-8  gap-4"
-        >
-          <Button className="flex w-full font-medium justify-center  gap-2 items-end">
-            See it in Action <LuExternalLink className="w-5 h-5" />
-          </Button>
-        </a>
+        
+        <div className="flex flex-wrap gap-4 mt-8 items-center">
+          {finalLiveUrl && (
+            <a
+              target={targetAttr}
+              href={finalLiveUrl}
+              className="flex-1 min-w-[160px]"
+            >
+              <Button className="flex w-full font-medium justify-center gap-2 items-center">
+                {buttonLabel} {buttonIcon}
+              </Button>
+            </a>
+          )}
+          {onReadMore && (
+            <div className="flex-1 min-w-[160px] cursor-pointer">
+              <Button onClick={onReadMore} variant="white" className="w-full font-medium justify-center">
+                Read Case Study
+              </Button>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

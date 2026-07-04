@@ -7,13 +7,11 @@ type MobileMenuProp = {
   menuOpen: boolean;
   setMenuOpen: Dispatch<SetStateAction<boolean>>;
   onCloseFinish: Dispatch<SetStateAction<boolean>>;
-  removeScroll: () => void;
 };
 
 const MobileMenu = ({
   menuOpen,
   setMenuOpen,
-  removeScroll,
   onCloseFinish,
 }: MobileMenuProp) => {
   useGSAP(() => {
@@ -56,7 +54,6 @@ const MobileMenu = ({
 
   const closeMenu = () => {
     setMenuOpen(false);
-    removeScroll();
   };
 
   return (
@@ -72,7 +69,7 @@ const MobileMenu = ({
               <Link
                 onClick={closeMenu}
                 className="text-2xl hover:text-gray-500"
-                href={"/portfolio"}
+                href={"#portfolio"}
               >
                 Portfolio
               </Link>
@@ -81,7 +78,7 @@ const MobileMenu = ({
               <Link
                 onClick={closeMenu}
                 className="text-2xl hover:text-gray-500"
-                href={"/about"}
+                href={"#about"}
               >
                 About
               </Link>
@@ -90,7 +87,7 @@ const MobileMenu = ({
               <Link
                 onClick={closeMenu}
                 className="text-2xl hover:text-gray-500"
-                href={"/contact"}
+                href={"#contact"}
               >
                 Contact
               </Link>

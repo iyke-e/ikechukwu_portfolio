@@ -21,6 +21,10 @@ import Fintrack from "@/assets/projectsimg/fintrack.png";
 
 import Tailwind from "@/assets/tailwindcss.svg";
 import ReactIcon from "@/assets/react.svg";
+import Flutter from "@/assets/flutter.svg";
+import VoiceOfTheEast from "@/assets/projectsimg/voiceoftheeast.jpg";
+import CondorCrest from "@/assets/projectsimg/condor_crest.jpeg";
+import SpotifyClone from "@/assets/projectsimg/spotify_clone.png";
 import type { StaticImageData } from "next/image";
 
 export type StackProp = {
@@ -42,6 +46,60 @@ export interface ProjectProp {
 }
 
 export const project: ProjectProp[] = [
+  {
+    featured: true,
+    category: "mobile",
+    name: "Voice of the East",
+    description:
+      "A premium cultural hub and content streaming mobile application built with React Native and Expo. It delivers live audio broadcasts, cultural news feeds, real-time push notifications, and customizable user media profiles to connect communities.",
+    stack: [
+      { name: "React Native", icon: ReactIcon },
+      { name: "Expo", icon: Expo },
+      { name: "TypeScript", icon: Ts },
+      { name: "Node.js", icon: Node },
+    ],
+    liveUrl: "https://github.com/iyke-e/voice-of-the-east",
+    sourceUrl: "https://github.com/iyke-e/voice-of-the-east",
+    imageUrl: VoiceOfTheEast,
+    tags: ["Mobile", "React Native", "Audio Streaming", "Fullstack"],
+    projectType: ["Mobile Apps", "Fullstack"],
+  },
+  {
+    featured: true,
+    category: "mobile",
+    name: "Condor Crest",
+    description:
+      "An enterprise logistics and fleet tracking mobile application developed in Flutter. Features real-time GPS tracking, optimized dispatch routes, offline-first SQLite synchronization, and high-performance interactive flight and telemetry dashboards.",
+    stack: [
+      { name: "Flutter", icon: Flutter },
+      { name: "Firebase", icon: Firebase },
+      { name: "TypeScript", icon: Ts },
+      { name: "Node.js", icon: Node },
+    ],
+    liveUrl: "https://github.com/iyke-e/condor-crest",
+    sourceUrl: "https://github.com/iyke-e/condor-crest",
+    imageUrl: CondorCrest,
+    tags: ["Mobile", "Flutter", "Logistics", "Telemetry"],
+    projectType: ["Mobile Apps", "Fullstack"],
+  },
+  {
+    featured: true,
+    category: "mobile",
+    name: "Spotify Clone",
+    description:
+      "A music streaming mobile application built with React Native and Expo. It features dynamic playlists, album pages, real-time music streaming integrated with the Deezer API, and custom music player controls.",
+    stack: [
+      { name: "React Native", icon: ReactIcon },
+      { name: "Expo", icon: Expo },
+      { name: "JavaScript", icon: Js },
+      { name: "Tailwind", icon: Tailwind },
+    ],
+    liveUrl: "https://github.com/iyke-e/spotify-clone-react-native",
+    sourceUrl: "https://github.com/iyke-e/spotify-clone-react-native",
+    imageUrl: SpotifyClone,
+    tags: ["Mobile", "React Native", "Audio Streaming", "API Integration"],
+    projectType: ["Mobile Apps"],
+  },
   {
     featured: true,
     category: "web",

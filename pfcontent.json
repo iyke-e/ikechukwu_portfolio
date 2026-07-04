@@ -1,6 +1,32 @@
 {
-    "about": "Hi! I'm Egwim Ikechukwu, a frontend developer from Lagos, Nigeria (he/him). I'm currently training as a mobile developer at Rise, focusing on React Native. I have around 3 years of experience in web and mobile development, working with Next.js, React, React Native, Expo, JavaScript, TypeScript, and more. I also have skills in graphic design using CorelDRAW and Figma, and I’ve taught IT to children.\n\nI build projects to showcase my skills, including this portfolio with an AI chatbot and a blog section. I’m also working on ShowcaseHub, a portfolio CMS, and Campus Crib, a platform for students to find accommodation.\n\nOutside tech, I enjoy music, gaming, anime, traveling, and staying indoors. I’m passionate about AI and Web3, and I play musical instruments occasionally. I’m a team player, highly curious, self-motivated, and believe consistent effort can achieve great results.\n\nFun fact: I love singing in the shower and sometimes get inspired for my projects while jamming to music!",
+    "about": "Hi! I'm Egwim Ikechukwu, a Full Stack Web & Mobile Developer from Lagos, Nigeria. I have around 3 years of experience in web and mobile development, working with React, Next.js, React Native, Flutter, Expo, Node.js, and MongoDB. I focus on crafting seamless, cross-platform experiences and reliable, high-performance backend systems.\n\nI build projects to showcase my skills, including this one-page portfolio, Voice of the East (a React Native streaming app), and Condor Crest (a Flutter logistics and telemetry app).\n\nOutside tech, I enjoy music, gaming, anime, traveling, and staying indoors. I’m passionate about AI and Web3. I’m a team player, highly curious, self-motivated, and believe consistent effort can achieve great results.\n\nFun fact: I love singing in the shower and sometimes get inspired for my projects while jamming to music!",
     "projects": [
+        {
+            "name": "Voice of the East",
+            "description": "A premium cultural hub and content streaming mobile application. It delivers live audio broadcasts, cultural news feeds, real-time push notifications, and customizable user media profiles.",
+            "techStack": [
+                "React Native",
+                "Expo",
+                "TypeScript",
+                "Node.js",
+                "Express",
+                "MongoDB",
+                "Tailwind CSS"
+            ]
+        },
+        {
+            "name": "Condor Crest",
+            "description": "An enterprise logistics and fleet tracking mobile application featuring real-time GPS tracking, optimized dispatch routes, offline-first SQLite synchronization, and high-performance interactive flight and telemetry dashboards.",
+            "techStack": [
+                "Flutter",
+                "Dart",
+                "Firebase",
+                "Node.js",
+                "Express",
+                "PostgreSQL",
+                "SQLite"
+            ]
+        },
         {
             "name": "ShowcaseHub",
             "description": "ShowcaseHub is a portfolio CMS designed for developers and creatives to manage and display their projects. Users can upload project details, multiple images, manage featured projects, and sync content directly with a personal portfolio website. Built with a modern web stack, it emphasizes ease of use and flexibility for portfolio management.",
@@ -83,7 +109,9 @@
         ],
         "mobile": [
             "React Native",
+            "Flutter",
             "Expo",
+            "Dart",
             "Cross-platform app development",
             "Navigation & State Management"
         ],

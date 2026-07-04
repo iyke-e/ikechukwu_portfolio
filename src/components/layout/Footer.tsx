@@ -14,8 +14,8 @@ const Footer = () => {
 
 
     return (
-        <div className='pad-auto border-t border-white/20 pt-10'>
-            <div className='pb-4'>
+        <div className='border-t border-white/20 pt-10 w-full'>
+            <div className='w-full max-w-[1400px] mx-auto px-4 md:px-8 pb-4'>
                 <div className='mb-16'>
                     <LogoIcon size={100} />
                 </div>
@@ -66,8 +66,10 @@ const Footer = () => {
                 </div>
 
             </div>
-            <div className='flex text-center gap-2 flex-col-reverse md:flex-row md:justify-between border-t py-4 border-white/20'>
-                <p >All Rights Reserved &copy; iykee 2025</p>
+            <div className='border-t py-4 border-white/20 w-full'>
+                <div className='flex text-center gap-2 flex-col-reverse md:flex-row md:justify-between w-full max-w-[1400px] mx-auto px-4 md:px-8'>
+                    <p >All Rights Reserved &copy; iykee 2025</p>
+                </div>
             </div>
         </div>
     )
@@ -76,7 +78,7 @@ const Footer = () => {
 export default Footer
 
 const navLinks = [
-    { name: "Portfolio", href: "/portfolio" },
-    { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" },
+    { name: "Portfolio", href: "#portfolio" },
+    { name: "About", href: "#about" },
+    { name: "Contact", href: "#contact" },
 ];

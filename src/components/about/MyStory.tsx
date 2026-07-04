@@ -14,18 +14,16 @@ const MyStory = () => {
       {/* Text Section */}
       <div className="flex flex-col justify-center md:w-3/4">
         <p className="text-lg leading-8">
-          I’m Ikechukwu Egwim, a frontend and full-stack developer passionate
-          about building web and mobile applications that are fast, intuitive,
-          and scalable. I specialize in{" "}
-          <strong>React, Next.js, and Node.js</strong>, creating interfaces that
-          look clean and perform seamlessly.
+          I’m Egwim Ikechukwu, a Full Stack Developer specializing in{" "}
+          <strong>mobile-first solutions with React Native, Flutter, and React</strong>. I build premium, high-performance mobile apps for iOS and Android, along with the robust backend APIs and responsive web dashboards to power them.
         </p>
 
         {/* Key Skills / Highlights */}
         <ul className="list-disc ml-5 mt-4 text-lg leading-8 flex flex-col gap-2">
-          <li>Responsive web apps with real-time dashboards</li>
-          <li>Mobile apps with smooth UI and backend integration</li>
-          <li>Full-stack development covering frontend and API workflows</li>
+          <li>Cross-platform mobile development for iOS & Android with React Native & Flutter</li>
+          <li>Robust backend APIs and fleet/media services built with Node.js, Express & Firebase</li>
+          <li>Advanced state management (Redux, BLoC, Zustand), offline data sync & push notifications</li>
+          <li>Responsive CMS platforms and recruiter dashboards built with Next.js & React</li>
         </ul>
 
         {/* Optional Extended Story */}

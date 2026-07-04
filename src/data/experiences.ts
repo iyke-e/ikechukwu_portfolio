@@ -1,5 +1,13 @@
 export const experiences = [
   {
+    role: "Mobile Developer (React Native)",
+    company: "Talent Hub Factory",
+    type: "Remote",
+    description:
+      "Developing and optimizing high-performance cross-platform mobile applications using React Native and Expo. Collaborating on API integration, push notifications, and global state architecture to deliver premium user experiences.",
+    year: "March 2026 – Present",
+  },
+  {
     role: "Mobile Development Trainee",
     company: "Rise Academy",
     type: "Remote",
