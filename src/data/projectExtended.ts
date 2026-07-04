@@ -24,6 +24,7 @@ import Flutter from "@/assets/flutter.svg";
 import VoiceOfTheEastImg from "@/assets/projectsimg/voiceoftheeast.jpg";
 import CondorCrestImg from "@/assets/projectsimg/condor_crest.jpeg";
 import SpotifyCloneImg from "@/assets/projectsimg/spotify_clone.png";
+import VotageChurchImg from "@/assets/projectsimg/votage_church.png";
 import { StaticImageData } from "next/image";
 
 type StackProp = {
@@ -141,40 +142,40 @@ export const projectExtended: ProjectPropExtended[] = [
   {
     featured: true,
     category: "mobile",
-    name: "Condor Crest",
+    name: "Crestmonie",
     description:
-      "An enterprise logistics and fleet tracking mobile application developed in Flutter. Features real-time GPS tracking, optimized dispatch routes, offline-first SQLite synchronization, and high-performance interactive flight and telemetry dashboards.",
+      "A secure cross-platform mobile investment application developed in Flutter. It enables users to browse financial markets, invest in corporate shares, track portfolios in real time, and manage funds securely. Built while interning at Integrated Software Services Ltd (ISSL).",
     stack: [
       { name: "Flutter", icon: Flutter },
       { name: "Firebase", icon: Firebase },
       { name: "TypeScript", icon: Ts },
       { name: "Node.js", icon: Node },
     ],
-    liveUrl: "https://github.com/iyke-e/condor-crest",
-    sourceUrl: "https://github.com/iyke-e/condor-crest",
+    liveUrl: "https://play.google.com/store/apps/details?id=com.issl.bankeasyap4candourcrest&hl=en",
+    sourceUrl: "",
     imageUrl: CondorCrestImg.src,
-    tags: ["Mobile", "Flutter", "Logistics", "Telemetry"],
-    projectType: ["Mobile Apps", "Fullstack"],
+    tags: ["Mobile", "Flutter", "Finance", "Investment"],
+    projectType: ["Mobile Apps", "Fintech"],
     problem:
-      "Aviation dispatchers and logistics managers suffered from data latency and synchronizing flight telemetry reports when dispatchers were working in areas with patchy mobile coverage.",
+      "Providing retail investors with a simple, secure, and low-latency mobile interface to buy and manage corporate shares, monitor dynamic dividend rates, and execute transactions without complex brokers.",
     solution:
-      "Built a high-performance cross-platform Flutter application using custom BLoC state management and SQLite offline-first sync to guarantee uninterrupted telemetry collection.",
+      "Developed a cross-platform investment client in Flutter with Firebase backend integrations during an engineering internship. Built real-time market data indexes, a portfolio performance tracker, and secure KYC integrations.",
     features: [
-      "🗺 Real-time GPS vehicle tracking and dispatch route suggestions",
-      "📊 Offline-first telemetry synchronization using SQLite",
-      "📈 Interactive SVG dashboards for flight health metrics",
-      "🛡 Secure role-based dashboard authentication and logs",
+      "📈 Real-time share catalog with market trends and indices",
+      "💼 Interactive portfolio tracking dashboards with dividend summaries",
+      "🔐 Secure KYC verification and user profile authentication",
+      "💸 Fast deposit and withdrawal transaction processing logs",
     ],
     impact:
-      "Zero data loss in low-connectivity areas, reducing route latency and sync errors by 90% for dispatch operations.",
-    role: "Full Stack Developer",
-    duration: "8 weeks",
-    teamSize: "2",
+      "Enabled users to execute shares transactions within seconds, reducing typical broker-assisted delay cycles by 95% and boosting retail participation.",
+    role: "Mobile Developer Intern",
+    duration: "12 weeks",
+    teamSize: "3 (2 Frontend, 1 Backend)",
     challenges: [
-      "Developing a reliable queue syncing mechanism to resolve database conflicts when offline updates sync back in a different order.",
+      "Handling high-precision financial decimals and keeping live share price telemetry synchronized across weak networks.",
     ],
     lessonsLearned: [
-      "Advanced Flutter BLoC state pattern, local storage optimization, and managing platform-specific database adapters.",
+      "Advanced state management, working under corporate agile settings during my internship, and secure finance data validations.",
     ],
     status: "Active (Play Store)",
   },
@@ -490,5 +491,43 @@ export const projectExtended: ProjectPropExtended[] = [
       "Advanced global state patterns using Zustand and setting up schema validations for transaction ledgers in relational databases.",
     ],
     status: "APK Available (Unpublished)",
+  },
+  {
+    featured: true,
+    category: "web",
+    name: "The Votage Church",
+    description:
+      "A premium web portal built for The Votage Church to stream sermons, coordinate connect groups, publish church announcements, and manage member events. Built with Next.js, React, TypeScript, and Tailwind CSS, it offers a custom CMS for admins and a lightning-fast responsive UI for attendees.",
+    stack: [
+      { name: "Next.js", icon: Next },
+      { name: "React", icon: ReactIcon },
+      { name: "TypeScript", icon: Ts },
+      { name: "Tailwind", icon: Tailwind },
+    ],
+    liveUrl: "https://thevotagechurch.org/home",
+    sourceUrl: "",
+    imageUrl: VotageChurchImg.src,
+    tags: ["Next.js", "CMS", "Streaming", "Community"],
+    projectType: ["Web Apps", "CMS"],
+    problem:
+      "The Votage Church needed a unified, high-performance platform to manage sermon media, live streaming, connect groups, and events. Existing social channels were fragmented, and administrative updates took too long.",
+    solution:
+      "Collaborated in a team of 4 (3 frontend, 1 backend) to construct a custom Next.js web application. Built search-optimized sermon catalogs, responsive media players, an event booking system, and a robust admin dashboard.",
+    features: [
+      "🎙 Streamlined sermon media catalog with search filtering",
+      "📅 Interactive church events manager and reservation system",
+      "📍 Connect group directory for members to locate local fellowships",
+      "⚡ Custom admin dashboard to manage updates and live broadcasts",
+    ],
+    role: "Frontend Developer (Team of 3)",
+    duration: "8 weeks",
+    teamSize: "4 (3 Frontend, 1 Backend)",
+    challenges: [
+      "Optimizing streaming media load times and configuring high-fidelity design metrics across screen resolutions while collaborating dynamically within a larger team repository.",
+    ],
+    lessonsLearned: [
+      "Git branching protocols for multi-developer teams, absolute component modularity, and setting up data schemas for high search visibility.",
+    ],
+    status: "Active - Live",
   },
 ];

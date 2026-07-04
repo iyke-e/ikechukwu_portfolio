@@ -1,5 +1,5 @@
 {
-    "about": "Hi! I'm Egwim Ikechukwu, a Full Stack Web & Mobile Developer from Lagos, Nigeria. I have around 3 years of experience in web and mobile development, working with React, Next.js, React Native, Flutter, Expo, Node.js, and MongoDB. I focus on crafting seamless, cross-platform experiences and reliable, high-performance backend systems.\n\nI build projects to showcase my skills, including this one-page portfolio, Voice of the East (a React Native streaming app), and Condor Crest (a Flutter logistics and telemetry app).\n\nOutside tech, I enjoy music, gaming, anime, traveling, and staying indoors. I’m passionate about AI and Web3. I’m a team player, highly curious, self-motivated, and believe consistent effort can achieve great results.\n\nFun fact: I love singing in the shower and sometimes get inspired for my projects while jamming to music!",
+    "about": "Hi! I'm Egwim Ikechukwu, a Full Stack Web & Mobile Developer from Lagos, Nigeria. I have around 3 years of experience in web and mobile development, working with React, Next.js, React Native, Flutter, Expo, Node.js, and MongoDB. I focus on crafting seamless, cross-platform experiences and reliable, high-performance backend systems.\n\nI build projects to showcase my skills, including this one-page portfolio, Voice of the East (a React Native streaming app), and Crestmonie (a Flutter share investment app).\n\nOutside tech, I enjoy music, gaming, anime, traveling, and staying indoors. I’m passionate about AI and Web3. I’m a team player, highly curious, self-motivated, and believe consistent effort can achieve great results.\n\nFun fact: I love singing in the shower and sometimes get inspired for my projects while jamming to music!",
     "projects": [
         {
             "name": "Voice of the East",
@@ -15,8 +15,8 @@
             ]
         },
         {
-            "name": "Condor Crest",
-            "description": "An enterprise logistics and fleet tracking mobile application featuring real-time GPS tracking, optimized dispatch routes, offline-first SQLite synchronization, and high-performance interactive flight and telemetry dashboards.",
+            "name": "Crestmonie",
+            "description": "A secure cross-platform mobile investment application developed in Flutter. It enables users to browse financial markets, invest in corporate shares, track portfolios in real time, and manage funds securely.",
             "techStack": [
                 "Flutter",
                 "Dart",

@@ -25,6 +25,7 @@ import Flutter from "@/assets/flutter.svg";
 import VoiceOfTheEast from "@/assets/projectsimg/voiceoftheeast.jpg";
 import CondorCrest from "@/assets/projectsimg/condor_crest.jpeg";
 import SpotifyClone from "@/assets/projectsimg/spotify_clone.png";
+import VotageChurch from "@/assets/projectsimg/votage_church.png";
 import type { StaticImageData } from "next/image";
 
 export type StackProp = {
@@ -67,20 +68,20 @@ export const project: ProjectProp[] = [
   {
     featured: true,
     category: "mobile",
-    name: "Condor Crest",
+    name: "Crestmonie",
     description:
-      "An enterprise logistics and fleet tracking mobile application developed in Flutter. Features real-time GPS tracking, optimized dispatch routes, offline-first SQLite synchronization, and high-performance interactive flight and telemetry dashboards.",
+      "A secure cross-platform mobile investment application developed in Flutter. It enables users to browse financial markets, invest in corporate shares, track portfolios in real time, and manage funds securely. Built while interning at Integrated Software Services Ltd (ISSL).",
     stack: [
       { name: "Flutter", icon: Flutter },
       { name: "Firebase", icon: Firebase },
       { name: "TypeScript", icon: Ts },
       { name: "Node.js", icon: Node },
     ],
-    liveUrl: "https://github.com/iyke-e/condor-crest",
-    sourceUrl: "https://github.com/iyke-e/condor-crest",
+    liveUrl: "https://play.google.com/store/apps/details?id=com.issl.bankeasyap4candourcrest&hl=en",
+    sourceUrl: "",
     imageUrl: CondorCrest,
-    tags: ["Mobile", "Flutter", "Logistics", "Telemetry"],
-    projectType: ["Mobile Apps", "Fullstack"],
+    tags: ["Mobile", "Flutter", "Finance", "Investment"],
+    projectType: ["Mobile Apps", "Fintech"],
   },
   {
     featured: true,
@@ -99,6 +100,24 @@ export const project: ProjectProp[] = [
     imageUrl: SpotifyClone,
     tags: ["Mobile", "React Native", "Audio Streaming", "API Integration"],
     projectType: ["Mobile Apps"],
+  },
+  {
+    featured: true,
+    category: "web",
+    name: "The Votage Church",
+    description:
+      "A premium web portal built for The Votage Church to stream sermons, coordinate connect groups, publish church announcements, and manage member events. Built with Next.js, React, TypeScript, and Tailwind CSS, it offers a custom CMS for admins and a lightning-fast responsive UI for attendees.",
+    stack: [
+      { name: "Next.js", icon: Next },
+      { name: "React", icon: ReactIcon },
+      { name: "TypeScript", icon: Ts },
+      { name: "Tailwind", icon: Tailwind },
+    ],
+    liveUrl: "https://thevotagechurch.org/home",
+    sourceUrl: "",
+    imageUrl: VotageChurch,
+    tags: ["Next.js", "CMS", "Streaming", "Community"],
+    projectType: ["Web Apps", "CMS"],
   },
   {
     featured: true,
