@@ -9,11 +9,14 @@ import { project } from "@/data/project";
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("All");
 
-  // Pinned top three mobile apps
-  const featuredProjects = project.slice(0, 3);
+  // Featured Mobile Apps
+  const featuredMobile = project.filter((item) => item.featured && item.category === "mobile");
+
+  // Featured Web Apps
+  const featuredWeb = project.filter((item) => item.featured && item.category === "web");
   
-  // The rest of the projects
-  const otherProjects = project.slice(3);
+  // Other projects (everything not featured)
+  const otherProjects = project.filter((item) => !item.featured);
 
   const filteredOthers =
     activeFilter === "All"
@@ -27,8 +30,14 @@ const Projects = () => {
   return (
     <div id="portfolio" className="py-10 border-t border-white/10">
       {/* Featured Mobile Projects Section */}
-      <SectionHeader title="Featured Mobile Projects" subtitle="Core Mobile Applications" />
-      <ProjectsDisplay project={featuredProjects} projectsPerPage={3} isFeatured={true} />
+      <SectionHeader title="Featured App Projects" subtitle="Core Mobile Applications" />
+      <ProjectsDisplay project={featuredMobile} projectsPerPage={3} isFeatured={true} />
+
+      {/* Featured Web Projects Section */}
+      <div className="mt-20 border-t border-white/5 pt-16">
+        <SectionHeader title="Featured Web Projects" subtitle="Core Web Applications" />
+        <ProjectsDisplay project={featuredWeb} projectsPerPage={1} isFeatured={true} />
+      </div>
 
       {/* Other Projects Section */}
       <div className="mt-20 border-t border-white/5 pt-16">

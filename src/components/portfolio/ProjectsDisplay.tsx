@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { ProjectCard } from "../home/Project/FeaturedProjects";
 import ProjectDetailModal from "./ProjectDetailModal";
 import { ProjectProp } from "@/data/project";
@@ -13,6 +13,8 @@ const ProjectsDisplay = ({
   projectsPerPage?: number;
   isFeatured?: boolean;
 }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInitialMount = useRef(true);
   const [openModal, setOpenModal] = useState(false);
   const [selectedProject, setSelectedProject] = useState<ProjectProp | null>(
     null
@@ -34,6 +36,18 @@ const ProjectsDisplay = ({
     };
   }, [openModal]);
 
+  useEffect(() => {
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
+    }
+
+    if (containerRef.current) {
+      const topOffset = containerRef.current.getBoundingClientRect().top + window.scrollY - 100;
+      window.scrollTo({ top: topOffset, behavior: "smooth" });
+    }
+  }, [currentPage]);
+
   const handleOpenModal = (item: ProjectProp) => {
     setSelectedProject(item);
     setOpenModal(true);
@@ -41,6 +55,10 @@ const ProjectsDisplay = ({
 
   const handleCloseModal = () => {
     setOpenModal(false);
+  };
+
+  const handlePageChange = (newPage: number) => {
+    setCurrentPage(newPage);
   };
 
   // Pagination math
@@ -53,7 +71,7 @@ const ProjectsDisplay = ({
   const totalPages = Math.ceil(project.length / projectsPerPage);
 
   return (
-    <div className="">
+    <div ref={containerRef} className="">
       <div>
         {displayedProjects.map((item, index) => (
           <div
@@ -82,7 +100,7 @@ const ProjectsDisplay = ({
           <Button
             variant="white"
             disabled={currentPage === 1}
-            onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+            onClick={() => handlePageChange(Math.max(currentPage - 1, 1))}
             className="disabled:opacity-40 disabled:cursor-not-allowed text-xs font-semibold px-4 py-2"
           >
             Previous
@@ -93,7 +111,7 @@ const ProjectsDisplay = ({
           <Button
             variant="white"
             disabled={currentPage === totalPages}
-            onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+            onClick={() => handlePageChange(Math.min(currentPage + 1, totalPages))}
             className="disabled:opacity-40 disabled:cursor-not-allowed text-xs font-semibold px-4 py-2"
           >
             Next

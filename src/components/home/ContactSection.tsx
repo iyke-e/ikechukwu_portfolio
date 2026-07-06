@@ -9,6 +9,36 @@ import { TfiEmail } from "react-icons/tfi";
 import SectionHeader from "@/components/ui/SectionHeader";
 
 const ContactSection = () => {
+  const [name, setName] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [message, setMessage] = React.useState("");
+  const [selectedAppName, setSelectedAppName] = React.useState("");
+
+  React.useEffect(() => {
+    const handleRequest = (e: Event) => {
+      const customEvent = e as CustomEvent;
+      const appName = customEvent.detail.appName;
+      setSelectedAppName(appName);
+      setMessage(`Hi Ikechukwu, I would like to request access to the ${appName} mobile app to test it out.`);
+    };
+
+    window.addEventListener("request-app-access", handleRequest);
+    return () => {
+      window.removeEventListener("request-app-access", handleRequest);
+    };
+  }, []);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const subject = selectedAppName 
+      ? `Request App Access: ${selectedAppName}`
+      : "Portfolio Contact Form";
+    const mailtoUrl = `mailto:egwimikechukwu.gp@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+      `Name: ${name || "N/A"}\nEmail: ${email}\n\nMessage:\n${message}`
+    )}`;
+    window.location.href = mailtoUrl;
+  };
+
   return (
     <div id="contact" className="py-16 border-t border-white/10">
       <SectionHeader title="Contact" subtitle="Let's get in touch" />
@@ -54,16 +84,17 @@ const ContactSection = () => {
         </div>
 
         <form 
-          onSubmit={(e) => e.preventDefault()} 
+          onSubmit={handleSubmit} 
           className="grid gap-8 border rounded-lg border-white/20 px-6 py-8 max-w-120 bg-white/5 backdrop-blur-sm"
         >
           <div className="grid gap-2">
-            <label className="text-sm font-medium text-white/80">Name</label>
+            <label className="text-sm font-medium text-white/80">Name (Optional)</label>
             <input
               className="border-b outline-0 border-white/20 px-4 py-2 text-white focus:border-accent transition bg-transparent"
               placeholder="Your Name"
               type="text"
-              required
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
           </div>
           <div className="grid gap-2">
@@ -72,6 +103,8 @@ const ContactSection = () => {
               className="border-b outline-0 border-white/20 px-4 py-2 text-white focus:border-accent transition bg-transparent"
               placeholder="your.email@example.com"
               type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>
@@ -84,6 +117,8 @@ const ContactSection = () => {
               maxLength={1000}
               className="border outline-0 h-32 border-white/20 rounded-xl px-4 py-2 text-white focus:border-accent bg-transparent transition"
               placeholder="Tell me about your project..."
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
               required
             ></textarea>
           </div>

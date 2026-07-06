@@ -52,14 +52,14 @@ export const project: ProjectProp[] = [
     category: "mobile",
     name: "Voice of the East",
     description:
-      "A premium cultural hub and content streaming mobile application built with React Native and Expo. It delivers live audio broadcasts, cultural news feeds, real-time push notifications, and customizable user media profiles to connect communities.",
+      "A high-performance, culturally rich cross-platform mobile application designed as a digital sanctuary and archival platform for South-Eastern Nigerian history, news, and heritage, bridging oral traditions and modern interactive journalism.",
     stack: [
       { name: "React Native", icon: ReactIcon },
       { name: "Expo", icon: Expo },
       { name: "TypeScript", icon: Ts },
       { name: "Node.js", icon: Node },
     ],
-    liveUrl: "https://github.com/iyke-e/voice-of-the-east",
+    liveUrl: "https://play.google.com/store/apps/details?id=com.talentfactoryafrica.voiceoftheeast",
     sourceUrl: "https://github.com/iyke-e/voice-of-the-east",
     imageUrl: VoiceOfTheEast,
     tags: ["Mobile", "React Native", "Audio Streaming", "Fullstack"],
@@ -84,7 +84,7 @@ export const project: ProjectProp[] = [
     projectType: ["Mobile Apps", "Fintech"],
   },
   {
-    featured: true,
+    featured: false,
     category: "mobile",
     name: "Spotify Clone",
     description:
@@ -120,7 +120,7 @@ export const project: ProjectProp[] = [
     projectType: ["Web Apps", "CMS"],
   },
   {
-    featured: true,
+    featured: false,
     category: "web",
     name: "Estatein",
     description:
@@ -138,7 +138,7 @@ export const project: ProjectProp[] = [
     projectType: ["CMS", "Fullstack", "Dashboard"],
   },
   {
-    featured: true,
+    featured: false,
     category: "mobile",
     name: "Fintrack",
     description:
@@ -158,7 +158,7 @@ export const project: ProjectProp[] = [
   },
 
   {
-    featured: true,
+    featured: false,
     category: "web",
     name: "ShowcaseHub",
     description:

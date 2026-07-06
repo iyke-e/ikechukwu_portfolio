@@ -24,10 +24,26 @@ export const ProjectCard = ({
   category,
 }: ProjectCardProps) => {
   const isMobileApp = category === "mobile";
-  const finalLiveUrl = isMobileApp ? "#contact" : liveUrl;
-  const buttonLabel = isMobileApp ? "Request App Access" : "See it in Action";
-  const buttonIcon = isMobileApp ? null : <LuExternalLink className="w-5 h-5" />;
-  const targetAttr = isMobileApp ? undefined : "_blank";
+  const hasLiveUrl = liveUrl && !liveUrl.includes("github.com");
+
+  let finalLiveUrl = liveUrl;
+  let buttonLabel = "See it in Action";
+  let buttonIcon: React.ReactNode = <LuExternalLink className="w-5 h-5" />;
+  let targetAttr: string | undefined = "_blank";
+
+  if (isMobileApp) {
+    if (hasLiveUrl) {
+      finalLiveUrl = liveUrl;
+      buttonLabel = liveUrl.includes("play.google.com") ? "View on Play Store" : "Launch Live App";
+      buttonIcon = <LuExternalLink className="w-5 h-5" />;
+      targetAttr = "_blank";
+    } else {
+      finalLiveUrl = "#contact";
+      buttonLabel = "Request App Access";
+      buttonIcon = null;
+      targetAttr = undefined;
+    }
+  }
 
   return (
     <div className="grid md:grid-cols-2 py-14 pad-auto items-center">
@@ -67,6 +83,13 @@ export const ProjectCard = ({
               target={targetAttr}
               href={finalLiveUrl}
               className="flex-1 min-w-[160px]"
+              onClick={() => {
+                if (isMobileApp && !hasLiveUrl) {
+                  window.dispatchEvent(
+                    new CustomEvent("request-app-access", { detail: { appName: title } })
+                  );
+                }
+              }}
             >
               <Button className="flex w-full font-medium justify-center gap-2 items-center">
                 {buttonLabel} {buttonIcon}
@@ -104,6 +127,7 @@ const FeaturedProjects = () => {
             title={item.name}
             description={item.description}
             imagebg={item.imageUrl}
+            category={item.category}
           />
         </div>
       ))}

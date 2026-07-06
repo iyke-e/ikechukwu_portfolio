@@ -139,22 +139,53 @@ const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
 
               {/* Action Buttons */}
               <div className="mt-2">
-                {activeProject?.liveUrl && (
-                  <a
-                    href={activeProject.category === "mobile" ? "#contact" : activeProject.liveUrl}
-                    target={activeProject.category === "mobile" ? undefined : "_blank"}
-                    rel="noopener noreferrer"
-                    onClick={activeProject.category === "mobile" ? onClose : undefined}
-                    className="w-full block"
-                  >
-                    <Button className="w-full justify-center gap-2 py-3.5 font-semibold text-base">
-                      {activeProject.category === "mobile"
-                        ? "Request App Access"
-                        : "Launch Live App"}{" "}
-                      {activeProject.category !== "mobile" && <LuExternalLink className="w-4 h-4" />}
-                    </Button>
-                  </a>
-                )}
+                {(() => {
+                  const isMobileApp = activeProject.category === "mobile";
+                  const hasLiveUrl = activeProject.liveUrl && !activeProject.liveUrl.includes("github.com");
+
+                  let finalLiveUrl = activeProject.liveUrl;
+                  let buttonLabel = "Launch Live App";
+                  let buttonIcon: React.ReactNode = <LuExternalLink className="w-4 h-4" />;
+                  let targetAttr: string | undefined = "_blank";
+                  let onClickAction: (() => void) | undefined = undefined;
+
+                  if (isMobileApp) {
+                    if (hasLiveUrl) {
+                      finalLiveUrl = activeProject.liveUrl;
+                      buttonLabel = activeProject.liveUrl.includes("play.google.com") ? "View on Play Store" : "Launch Live App";
+                      buttonIcon = <LuExternalLink className="w-4 h-4" />;
+                      targetAttr = "_blank";
+                      onClickAction = undefined;
+                    } else {
+                      finalLiveUrl = "#contact";
+                      buttonLabel = "Request App Access";
+                      buttonIcon = null;
+                      targetAttr = undefined;
+                      onClickAction = () => {
+                        window.dispatchEvent(
+                          new CustomEvent("request-app-access", { detail: { appName: activeProject.name } })
+                        );
+                        onClose();
+                      };
+                    }
+                  }
+
+                  if (!finalLiveUrl) return null;
+
+                  return (
+                    <a
+                      href={finalLiveUrl}
+                      target={targetAttr}
+                      rel="noopener noreferrer"
+                      onClick={onClickAction}
+                      className="w-full block"
+                    >
+                      <Button className="w-full justify-center gap-2 py-3.5 font-semibold text-base">
+                        {buttonLabel} {buttonIcon}
+                      </Button>
+                    </a>
+                  );
+                })()}
               </div>
             </div>
 

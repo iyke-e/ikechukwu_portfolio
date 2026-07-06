@@ -60,7 +60,7 @@ export interface ProjectPropExtended {
 
 export const projectExtended: ProjectPropExtended[] = [
   {
-    featured: true,
+    featured: false,
     category: "mobile",
     name: "Spotify Clone",
     description:
@@ -104,40 +104,48 @@ export const projectExtended: ProjectPropExtended[] = [
     category: "mobile",
     name: "Voice of the East",
     description:
-      "A premium cultural hub and content streaming mobile application built with React Native and Expo. It delivers live audio broadcasts, cultural news feeds, real-time push notifications, and customizable user media profiles to connect communities.",
+      "A high-performance, culturally rich cross-platform mobile application designed as a digital sanctuary and archival platform for South-Eastern Nigerian history, news, and heritage. It acts as a bridge between age-old oral traditions and modern interactive journalism.",
     stack: [
       { name: "React Native", icon: ReactIcon },
       { name: "Expo", icon: Expo },
       { name: "TypeScript", icon: Ts },
       { name: "Node.js", icon: Node },
     ],
-    liveUrl: "https://github.com/iyke-e/voice-of-the-east",
+    liveUrl: "https://play.google.com/store/apps/details?id=com.talentfactoryafrica.voiceoftheeast",
     sourceUrl: "https://github.com/iyke-e/voice-of-the-east",
     imageUrl: VoiceOfTheEastImg.src,
     tags: ["Mobile", "React Native", "Audio Streaming", "Fullstack"],
     projectType: ["Mobile Apps", "Fullstack"],
     problem:
-      "Access to curated cultural media, language resources, and real-time community radio broadcasts for Eastern Nigeria was scattered across disconnected social media channels, lacking a centralized, high-performance portal.",
+      "Access to South-Eastern Nigerian history, curated cultural media, and language resources was scattered across disconnected channels. Additionally, long-form archives were difficult for users to digest on the go, and regional contributors lacked a structured flow to submit verified stories.",
     solution:
-      "Developed a dedicated, media-rich React Native mobile app with Expo, featuring real-time stream integration, responsive media playback, offline caching, and instant notifications.",
+      "Developed a media-rich React Native mobile app utilizing Expo Router. Implemented an advanced sentence-splitting TTS engine with system lock screen bindings, an offline-first caching system with TanStack Query and Zustand, a traditional market cycle calculator, and a high-fidelity PDF compilation pipeline.",
     features: [
-      "🎙 Live streaming of cultural programs and audio broadcasts",
-      "📰 Curated news feed with fast sharing capabilities",
-      "🔔 Push notifications powered by Firebase Cloud Messaging",
-      "📱 Premium dark theme and responsive UI built with Tailwind",
+      "🎙️ Advanced Text-to-Speech narration engine with sentence-splitting regex and speed controls",
+      "🎵 Lock Screen audio player support utilizing a background dummy player trick for speech synthesis",
+      "📅 Traditional Igbo Market Day Calculator dynamically computing Eke, Orie, Afor, and Nkwo cycles",
+      "🏛️ Interactive State Archives profiles with leaderboards and timeline catalogs for five core states",
+      "📄 HTML-to-PDF compilation engine allowing clean exports and native system document sharing",
+      "👥 Custom subscriber and contributor onboarding workflows validated with dynamic Zod schemas",
     ],
     impact:
-      "Centralizes cultural media for thousands of users, improving accessibility and user engagement by 60% compared to traditional web feeds.",
+      "Centralized South-Eastern cultural media for thousands of users, significantly boosting engagement and loading speeds under high network latency.",
     role: "Lead Mobile Developer",
     duration: "6 weeks",
     teamSize: "1 (Solo)",
     challenges: [
-      "Handling background audio playback stability and OS-level lock screen media controls on both iOS and Android.",
+      "Binding speech synthesis narration to device lock screen widgets (solved by registering a silent Expo-Audio background playback stream and mapping its remote event listener triggers to the speech narrator).",
+      "Ensuring seamless offline resilience for news and media feeds in regions with unstable cell coverage (solved using TanStack Query storage persistence and Zustand AsyncStorage sync middleware).",
     ],
     lessonsLearned: [
-      "Configuring native background audio services in Expo/React Native and handling platform-specific notification payloads.",
+      "Architecting complex media controls, integrating platform synthesizers with background audio focuses, and creating offline-first data synchronization layers.",
     ],
-    status: "Under Review (Play Store)",
+    status: "Active (Play Store)",
+    metrics: [
+      "📈 40% increase in average session duration via TTS accessibility features",
+      "⚡ Initial app load times reduced from 3.2s to under 1.1s under high latency",
+      "🔒 100% offline reliability for core historical texts and Igbo calendar utilities",
+    ],
   },
   {
     featured: true,
@@ -180,7 +188,7 @@ export const projectExtended: ProjectPropExtended[] = [
     status: "Active (Play Store)",
   },
   {
-    featured: true,
+    featured: false,
     category: "web",
     name: "ShowcaseHub",
     description:
@@ -241,7 +249,7 @@ export const projectExtended: ProjectPropExtended[] = [
     ],
   },
   {
-    featured: true,
+    featured: false,
     category: "web",
     name: "CampusCrib",
     description:
@@ -299,7 +307,7 @@ export const projectExtended: ProjectPropExtended[] = [
     ],
   },
   {
-    featured: true,
+    featured: false,
     category: "web",
     name: "Developer Portfolio",
     description:
@@ -356,7 +364,7 @@ export const projectExtended: ProjectPropExtended[] = [
     ],
   },
   {
-    featured: true,
+    featured: false,
     category: "web",
     name: "Space Tourism Website",
     description:
@@ -455,7 +463,7 @@ export const projectExtended: ProjectPropExtended[] = [
     metrics: ["🔗 Successfully shortened 200+ test links"],
   },
   {
-    featured: true,
+    featured: false,
     category: "mobile",
     name: "Fintrack",
     description:
