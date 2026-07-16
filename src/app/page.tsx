@@ -17,7 +17,7 @@ export default function Home() {
         <SectionHeader title="About Me" subtitle="Meet the developer" />
         <MyStory />
         <TechStack />
-        <FullExperience />
+        {/* <FullExperience /> */}
       </section>
 
       {/* Contact Form Section */}
