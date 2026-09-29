@@ -14,10 +14,10 @@ const GlidingStack = () => {
             key={index}
           >
             <Image
-              src={stack.icon.src}
-              width={15}
-              height={15}
-              alt={stack.name + "icon"}
+              src={stack.icon?.src || stack.icon}
+              width={16}
+              height={16}
+              alt={`${stack.name} icon`}
             />
             <p className="text-sm">{stack.name}</p>
           </li>

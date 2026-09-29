@@ -1,4 +1,22 @@
-export const experiences = [
+export interface ExperienceItem {
+  role: string;
+  company: string;
+  type: string;
+  description: string;
+  year: string;
+  activeProject?: boolean;
+}
+
+export const experiences: ExperienceItem[] = [
+  {
+    role: "Independent Software Engineer & Consultant",
+    company: "Freelance / Direct Client Contracts",
+    type: "Freelance",
+    description:
+      "Operating as an independent software consultant alongside corporate and team roles since 2023. Architecting custom cross-platform mobile applications (React Native, Flutter) and fullstack web platforms for startups, founders, and private businesses. Currently engineering engineering an active production Flutter application, owning the frontend architecture, design system implementation, API integration, and performance optimization.",
+    year: "2023 – Present",
+    activeProject: true,
+  },
   {
     role: "Mobile Developer (React Native)",
     company: "Talent Hub Factory",
@@ -21,7 +39,7 @@ export const experiences = [
     type: "Onsite",
     description:
       "Built a production-ready web project using Next.js, React, Tailwind CSS, and supporting libraries. Delivered fully responsive interfaces, integrated APIs, and optimized performance—achieving a 15% faster load time compared to the legacy stack.",
-    year: "May 2024 - Nov 2024",
+    year: "May 2024 – Nov 2024",
   },
   {
     role: "Software Engineering Intern",

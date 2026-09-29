@@ -1,0 +1,44 @@
+[
+  {
+    "id": "mobile",
+    "name": "Mobile Native Apps",
+    "slug": "mobile",
+    "description": "Cross-platform and native mobile apps built with React Native, Expo, Flutter, iOS and Android.",
+    "icon": "smartphone"
+  },
+  {
+    "id": "web",
+    "name": "Web Systems & SaaS",
+    "slug": "web",
+    "description": "High-performance web applications, responsive platforms, and SaaS products built with Next.js and TypeScript.",
+    "icon": "globe"
+  },
+  {
+    "id": "backend",
+    "name": "Backend & Distributed Systems",
+    "slug": "backend",
+    "description": "Scalable APIs, event-driven architectures with Apache Kafka, Redis in-memory caching, and microservices.",
+    "icon": "server"
+  },
+  {
+    "id": "ai",
+    "name": "AI & Intelligent Systems",
+    "slug": "ai",
+    "description": "Autonomous agents, LLM integrations, voice/speech processing, and automated reasoning pipelines.",
+    "icon": "cpu"
+  },
+  {
+    "id": "fintech",
+    "name": "Fintech & Banking",
+    "slug": "fintech",
+    "description": "Secure financial tracking, real-time share catalogs, automated trading interfaces, and payment infrastructure.",
+    "icon": "trending-up"
+  },
+  {
+    "id": "cloud",
+    "name": "Cloud Infrastructure & DevOps",
+    "slug": "cloud",
+    "description": "Docker containerization, CI/CD automation, serverless deployments, and resilient monitoring.",
+    "icon": "cloud"
+  }
+]

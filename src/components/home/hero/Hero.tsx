@@ -1,72 +1,99 @@
 "use client";
 
 import React from "react";
-import Button from "../../ui/Button";
-import GlidingStack from "./GlidingStack";
 import Link from "next/link";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { SplitText } from "gsap/all";
+import { FiArrowDownRight, FiArrowUpRight } from "react-icons/fi";
+import HeroMinimal3D from "@/components/3d/HeroMinimal3D";
 
-gsap.registerPlugin(useGSAP);
-gsap.registerPlugin(SplitText);
-
-const Hero = () => {
-  useGSAP(() => {
-    const tl = gsap.timeline({
-      defaults: {
-        ease: "power2.inOut",
-      },
-    });
-
-    const split = SplitText.create("#text", {
-      type: "lines",
-    });
-
-    gsap.from(split.lines, {
-      y: 100,
-      autoAlpha: 0,
-      stagger: 0.05,
-    });
-  }, []);
-
+export default function Hero() {
   return (
-    <div className="relative pt-20 md:pt-30 ">
-      <div className="pad-auto relative justify-between gap-10 flex items-center">
-        <div className=" mb-10 md:mb-0">
-          <p id="dummytext" className="opacity-10 mb-4   ">
-            React + React Native + Flutter + Next.js + Node
+    <section
+      id="home"
+      aria-label="Introduction"
+      className="relative min-h-[90vh] flex flex-col justify-between pt-24 md:pt-28 hairline-b overflow-hidden"
+    >
+      {/* Editorial Corner Crosshairs */}
+      <div className="hidden sm:block absolute top-24 left-6 text-[var(--fg-3)] font-mono text-xs select-none pointer-events-none opacity-40">
+        +
+      </div>
+      <div className="hidden sm:block absolute top-24 right-6 text-[var(--fg-3)] font-mono text-xs select-none pointer-events-none opacity-40">
+        +
+      </div>
+
+      {/* Main Grid: Typography & Minimalist 3D Sculpture */}
+      <div className="pad-auto grid grid-cols-1 lg:grid-cols-12 items-center gap-12 lg:gap-8 my-auto z-10 py-12 md:py-16">
+        
+        {/* Left Column: Monumental Headline & Narrative */}
+        <div className="lg:col-span-7 flex flex-col justify-center text-left">
+          
+          {/* Eyebrow Metadata */}
+          <div className="flex flex-wrap items-center gap-3 mb-6 font-mono text-[11px] tracking-widest uppercase text-[var(--fg-3)]">
+            <span className="flex items-center gap-2 px-3 py-1 rounded-full hairline-all bg-[var(--surface)] text-[var(--fg)]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[var(--red)] animate-pulse" />
+              Software Engineer &amp; Craftsman
+            </span>
+            <span className="text-[var(--fg-muted)] hidden sm:inline">
+              [ 6.5244° N, 3.3792° E // WAT ]
+            </span>
+          </div>
+
+          {/* Monumental Headline */}
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[4.4rem] font-heading font-medium tracking-tight text-[var(--fg)] leading-[1.05] sm:leading-[0.98] mb-8">
+            Turning complex systems into <span className="text-[var(--red)]">refined, high-performance</span> digital products.
+          </h1>
+
+          {/* Editorial Supporting Description */}
+          <p className="text-base sm:text-lg text-[var(--fg-2)] leading-relaxed max-w-xl mb-10 font-normal">
+            Full-stack software engineer architecting native mobile apps (<strong className="text-[var(--fg)] font-medium">React Native</strong>, <strong className="text-[var(--fg)] font-medium">Flutter</strong>), scalable web systems (<strong className="text-[var(--fg)] font-medium">Next.js</strong>, <strong className="text-[var(--fg)] font-medium">TypeScript</strong>), and resilient cloud backend architectures (<strong className="text-[var(--fg)] font-medium">Node.js</strong>, <strong className="text-[var(--fg)] font-medium">PostgreSQL</strong>, <strong className="text-[var(--fg)] font-medium">Firebase</strong>).
           </p>
-          <div>
-            <h1 className="text-4xl md:text-6xl  font-semibold max-w-220 leading-12 mb-4 md:leading-18 ">
-              Turning Code into <br /> Seamless Experiences
-            </h1>
-            <p id="text" className="text-white/70  max-w-160 ">
-              I'm Egwim Ikechukwu, a Full Stack Web & Mobile Developer with a passion for building seamless cross-platform experiences. Specializing in React, React Native, and Flutter, I build beautiful, high-performance interfaces and the solid infrastructure to power them.
-            </p>
-          </div>
-          <div className="flex item-center  mt-8 gap-4">
-            <Link href="#portfolio">
-              <Button>View Portfolio</Button>
+
+          {/* Minimalist CTAs */}
+          <div className="flex flex-wrap items-center gap-4">
+            <Link
+              href="#work"
+              data-cursor="pointer"
+              className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-[var(--fg)] text-[var(--bg)] font-mono text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-all"
+            >
+              <span>Explore Selected Work</span>
+              <FiArrowDownRight className="w-4 h-4" />
             </Link>
-            <Link href="#contact">
-              <Button variant="white">Get in Touch</Button>
+
+            <Link
+              href="#contact"
+              data-cursor="pointer"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full hairline-all bg-[var(--surface)] text-[var(--fg)] font-mono text-xs font-medium uppercase tracking-wider hover:bg-[var(--surface-hover)] transition-all"
+            >
+              <span>Start Conversation</span>
+              <FiArrowUpRight className="w-3.5 h-3.5 text-[var(--red)]" />
             </Link>
           </div>
         </div>
-        <div className="hidden lg:grid gap-2 w-100 h-100 opacity-10 grid-cols-2">
-          <div className="  border-4 border-white aspect-square h-full w-full rounded-b-full " />
-          <div className="bg-white aspect-square h-full w-full rounded-full " />
-          <div className="border-4 border-white aspect-square h-full w-full rounded-full " />{" "}
-          <div className="  border-4 border-white aspect-square h-full w-full rounded-t-full " />
+
+        {/* Right Column: High-End Minimalist 3D Geometry */}
+        <div className="lg:col-span-5 flex items-center justify-center">
+          <HeroMinimal3D />
         </div>
       </div>
 
-      <div className=" mt-4 md:mt-10">
-        <GlidingStack />
+      {/* Hairline Technical Specification Bar */}
+      <div className="w-full hairline-t py-4 bg-[var(--surface)]/40">
+        <div className="pad-auto flex flex-wrap items-center justify-between gap-4 text-[11px] font-mono text-[var(--fg-3)]">
+          <div className="flex items-center gap-4 sm:gap-6 flex-wrap">
+            <span className="text-[var(--fg-2)]">// ENGINEERING SCOPE:</span>
+            <span>MOBILE ECOSYSTEMS</span>
+            <span>•</span>
+            <span>DISTRIBUTED WEB PLATFORMS</span>
+            <span>•</span>
+            <span>CLOUD &amp; BACKEND APIS</span>
+            <span>•</span>
+            <span>DATA INFRASTRUCTURE</span>
+          </div>
+          <div className="flex items-center gap-4">
+            <span className="text-[var(--red)]">● PRODUCTION GRADE</span>
+            <span className="hidden sm:inline">LAGOS // UTC+1</span>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default Hero;
+}

@@ -1,7 +1,13 @@
+"use client";
+
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Link from "next/link";
-import React, { Dispatch, SetStateAction } from "react";
+import { usePathname } from "next/navigation";
+import React, { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
+import { navLinks } from "./Header";
+import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
 type MobileMenuProp = {
   menuOpen: boolean;
@@ -14,122 +20,144 @@ const MobileMenu = ({
   setMenuOpen,
   onCloseFinish,
 }: MobileMenuProp) => {
-  useGSAP(() => {
-    const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [mounted, setMounted] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
-    if (menuOpen) {
-      tl.fromTo(
-        "#menu-container",
-        { scaleY: 0, transformOrigin: "top", opacity: 0 },
-        { scaleY: 1, opacity: 1, duration: 0.6 }
-      ).from(
-        "#link",
-        {
-          x: "-120%",
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useGSAP(
+    () => {
+      if (!containerRef.current) return;
+      const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
+
+      if (menuOpen) {
+        tl.fromTo(
+          containerRef.current,
+          { opacity: 0, y: -10 },
+          { opacity: 1, y: 0, duration: 0.28, ease: "power3.out" }
+        )
+          .fromTo(
+            ".mobile-link",
+            { x: -24, opacity: 0 },
+            {
+              x: 0,
+              opacity: 1,
+              stagger: 0.045,
+              duration: 0.32,
+              ease: "power2.out",
+            },
+            "-=0.15"
+          )
+          .fromTo(
+            ".mobile-footer",
+            { y: 15, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.3, ease: "power2.out" },
+            "-=0.15"
+          );
+      } else {
+        tl.to(containerRef.current, {
           opacity: 0,
-          stagger: 0.2,
-          ease: "back.out(1.7)",
-        },
-        "-=0.1"
-      );
-    } else {
-      tl.to("#link", {
-        x: "-120%",
-        opacity: 0,
-        stagger: { each: 0.08, from: "end" },
-        ease: "power2.in",
-      }).to(
-        "#menu-container",
-        {
-          scaleY: 0,
-          opacity: 0,
-          transformOrigin: "top",
+          y: -10,
           duration: 0.2,
+          ease: "power2.in",
           onComplete: onCloseFinish,
-        },
-        "-=0.1"
-      );
-    }
-  }, [menuOpen]);
+        });
+      }
+    },
+    { scope: containerRef, dependencies: [menuOpen, mounted] }
+  );
 
   const closeMenu = () => {
     setMenuOpen(false);
   };
 
-  return (
+  if (!mounted || typeof document === "undefined") return null;
+
+  return createPortal(
     <div
-      id="menu-container"
-      className="space-y-12  px-4 py-4 absolute w-full h-[calc(100dvh-60px)] bg-background"
+      ref={containerRef}
+      id="mobile-menu-container"
+      style={{ backgroundColor: "var(--bg)" }}
+      className="lg:hidden fixed inset-0 z-[9998] flex flex-col justify-between pt-24 pb-8 px-6 hairline-b overflow-y-auto overscroll-none touch-pan-y select-none"
+      onTouchMove={(e) => {
+        // Prevent touch scroll chaining to page behind
+        e.stopPropagation();
+      }}
     >
       <div>
-        <p className="text-sm text-gray-400 mb-6">Menu</p>
+        <p className="text-[11px] font-mono text-[var(--fg-3)] uppercase tracking-widest mb-8">
+          // Navigation Index
+        </p>
         <nav>
-          <ul className="grid gap-6">
-            <li id="link">
-              <Link
-                onClick={closeMenu}
-                className="text-2xl hover:text-gray-500"
-                href={"#portfolio"}
-              >
-                Portfolio
-              </Link>
-            </li>
-            <li id="link">
-              <Link
-                onClick={closeMenu}
-                className="text-2xl hover:text-gray-500"
-                href={"#about"}
-              >
-                About
-              </Link>
-            </li>
-            <li id="link">
-              <Link
-                onClick={closeMenu}
-                className="text-2xl hover:text-gray-500"
-                href={"#contact"}
-              >
-                Contact
-              </Link>
-            </li>
+          <ul className="flex flex-col gap-5">
+            {navLinks.map((link) => {
+              const targetHref = isHome ? `#${link.id}` : `/#${link.id}`;
+              return (
+                <li key={link.id} className="mobile-link">
+                  <Link
+                    onClick={closeMenu}
+                    className="flex items-baseline gap-4 text-3xl font-heading font-medium tracking-tight text-[var(--fg)] hover:text-[var(--red)] transition-colors py-1"
+                    href={targetHref}
+                  >
+                    <span className="font-mono text-xs text-[var(--fg-3)]">
+                      {link.num}
+                    </span>
+                    <span>{link.name}</span>
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </nav>
       </div>
-      <div>
-        <p className="text-sm text-gray-400 mb-6">Connect</p>
-        <nav>
-          <ul className="grid gap-6">
-            <li id="link">
-              <a
-                className="text-2xl hover:text-gray-500"
-                target="_blank"
-                href={"/Ikechukwu_Egwim_cv.pdf"}
-              >
-                Resume
-              </a>
-            </li>
-            <li id="link">
-              <a
-                className="text-2xl hover:text-gray-500"
-                target="_blank"
-                href={"https://linkedin.com/in/iyke-gp"}
-              >
-                Linkedin
-              </a>
-            </li>
-            <li id="link">
-              <a
-                className="text-2xl hover:text-gray-500"
-                target="_blank"
-                href={"https://github.com/iyke-e"}
-              >
-                Github
-              </a>
-            </li>
-          </ul>
-        </nav>
+
+      <div className="mobile-footer pt-8 hairline-t space-y-5">
+        <a
+          onClick={closeMenu}
+          target="_blank"
+          rel="noopener noreferrer"
+          href="/Ikechukwu_Egwim_cv.pdf"
+          className="w-full py-3.5 rounded-full bg-[var(--fg)] text-[var(--bg)] font-mono text-xs font-semibold uppercase tracking-wider text-center block hover:opacity-90 transition-opacity"
+        >
+          Download Resume PDF &darr;
+        </a>
+
+        <div className="flex items-center justify-between text-xs font-mono text-[var(--fg-2)] pt-2">
+          <span>LAGOS, NIGERIA</span>
+          <div className="flex items-center gap-5">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/iyke-e"
+              className="hover:text-[var(--red)] transition-colors"
+            >
+              GitHub
+            </a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://linkedin.com/in/iyke-gp"
+              className="hover:text-[var(--red)] transition-colors"
+            >
+              LinkedIn
+            </a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://twitter.com/Ikechukwu_eg"
+              className="hover:text-[var(--red)] transition-colors"
+            >
+              Twitter
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 

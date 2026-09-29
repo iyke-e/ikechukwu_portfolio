@@ -45,56 +45,43 @@ export interface StackItem {
     | "design"
     | "tools"
     | "ai";
+  level?: "flagship" | "proficient" | "expanding";
 }
 
 export const stackList: StackItem[] = [
-  // ===== FRONTEND =====
-  { name: "Next.js", icon: Next, category: "frontend" },
-  { name: "React.js", icon: ReactIcon, category: "frontend" },
-  { name: "Tailwind CSS", icon: Tailwind, category: "frontend" },
-  { name: "HTML5", icon: HTML, category: "frontend" },
-  { name: "CSS3", icon: CSS, category: "frontend" },
-  { name: "JavaScript", icon: Js, category: "frontend" },
-  { name: "TypeScript", icon: Ts, category: "frontend" },
-  { name: "Redux", icon: Redux, category: "frontend" },
-  { name: "Zustand", icon: Zustand, category: "frontend" },
-  { name: "Vite", icon: Vite, category: "frontend" },
+  // ===== MOBILE (CORE FLAGSHIP) =====
+  { name: "React Native", icon: ReactIcon, category: "mobile", level: "flagship" },
+  { name: "Flutter", icon: Flutter, category: "mobile", level: "flagship" },
+  { name: "Expo", icon: ExpoGo, category: "mobile", level: "flagship" },
+  { name: "iOS", icon: IOS, category: "mobile", level: "flagship" },
+  { name: "Android", icon: Android, category: "mobile", level: "flagship" },
 
-  // ===== BACKEND =====
-  { name: "Node.js", icon: Node, category: "backend" },
-  { name: "Express.js", icon: Express, category: "backend" },
-  // { name: "FastAPI", icon: FastAPI, category: "backend" },
-  // { name: "Python", icon: Python, category: "backend" },
-  { name: "Firebase", icon: Firebase, category: "backend" },
-  { name: "Supabase", icon: Supabase, category: "backend" },
-  // { name: "Prisma ORM", icon: Prisma, category: "backend" },
+  // ===== FRONTEND (CORE FLAGSHIP) =====
+  { name: "Next.js", icon: Next, category: "frontend", level: "flagship" },
+  { name: "React.js", icon: ReactIcon, category: "frontend", level: "flagship" },
+  { name: "TypeScript", icon: Ts, category: "frontend", level: "flagship" },
+  { name: "JavaScript", icon: Js, category: "frontend", level: "flagship" },
+  { name: "Tailwind CSS", icon: Tailwind, category: "frontend", level: "flagship" },
+  { name: "Zustand", icon: Zustand, category: "frontend", level: "flagship" },
+  { name: "Redux", icon: Redux, category: "frontend", level: "proficient" },
+  { name: "Vite", icon: Vite, category: "frontend", level: "flagship" },
+  { name: "HTML5", icon: HTML, category: "frontend", level: "flagship" },
+  { name: "CSS3", icon: CSS, category: "frontend", level: "flagship" },
 
-  // ===== DATABASE =====
-  { name: "MongoDB", icon: MongoDB, category: "backend" },
-  { name: "PostgreSQL", icon: Postgres, category: "backend" },
+  // ===== BACKEND (EXPANDING FOCUS & SUPPORT) =====
+  { name: "Node.js", icon: Node, category: "backend", level: "proficient" },
+  { name: "Express.js", icon: Express, category: "backend", level: "proficient" },
+  { name: "PostgreSQL", icon: Postgres, category: "backend", level: "proficient" },
+  { name: "MongoDB", icon: MongoDB, category: "backend", level: "proficient" },
+  { name: "Prisma ORM", icon: Prisma, category: "backend", level: "proficient" },
+  { name: "Supabase", icon: Supabase, category: "backend", level: "proficient" },
+  { name: "Firebase", icon: Firebase, category: "backend", level: "proficient" },
+  { name: "Docker", icon: Docker, category: "backend", level: "expanding" },
 
-  // ===== MOBILE =====
-  { name: "Expo", icon: ExpoGo, category: "mobile" },
-  { name: "React Native", icon: ReactIcon, category: "mobile" },
-  { name: "Flutter", icon: Flutter, category: "mobile" },
-  { name: "Android", icon: Android, category: "mobile" },
-  { name: "iOS", icon: IOS, category: "mobile" },
-
-  // ===== DEVOPS =====
-  { name: "Docker", icon: Docker, category: "backend" },
-  // { name: "AWS", icon: AWS, category: "devops" },
-  { name: "Vercel", icon: Vercel, category: "tools" },
-
-  // // ===== AI / ML =====
-  // { name: "TensorFlow", icon: Tensorflow, category: "ai" },
-  // { name: "LangChain", icon: Langchain, category: "ai" },
-  // { name: "OpenAI API", icon: OpenAI, category: "ai" },
-
-  // ===== DESIGN =====
-  { name: "Figma", icon: Figma, category: "tools" },
-
-  // ===== TOOLS =====
-  { name: "Git", icon: Git, category: "tools" },
-  { name: "GitHub", icon: Github, category: "tools" },
-  { name: "VS Code", icon: Vscode, category: "tools" },
+  // ===== TOOLS & DESIGN =====
+  { name: "Git", icon: Git, category: "tools", level: "proficient" },
+  { name: "GitHub", icon: Github, category: "tools", level: "proficient" },
+  { name: "VS Code", icon: Vscode, category: "tools", level: "proficient" },
+  { name: "Figma", icon: Figma, category: "tools", level: "proficient" },
+  { name: "Vercel", icon: Vercel, category: "tools", level: "proficient" },
 ];

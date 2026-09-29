@@ -1,26 +1,32 @@
 import Hero from "@/components/home/hero/Hero";
 import Projects from "@/components/home/Project/Projects";
-import MyStory from "@/components/about/MyStory";
-import TechStack from "@/components/home/About/TechStack";
-import FullExperience from "@/components/about/FullExperience";
-import ContactSection from "@/components/home/ContactSection";
-import SectionHeader from "@/components/ui/SectionHeader";
-
+import ServicesSection from "@/components/home/Services/ServicesSection";
+import ApproachSection from "@/components/home/Philosophy/ApproachSection";
+import ExperienceSection from "@/components/home/Experience/ExperienceSection";
+import SkillsSection from "@/components/home/Skills/SkillsSection";
+import ContactSection from "@/components/home/Contact/ContactSection";
 export default function Home() {
   return (
-    <main className="min-h-screen pb-10 pt-15">
+    <main className="min-h-screen relative w-full">
+      {/* 00. Hero / Editorial Introduction */}
       <Hero />
+
+      {/* 01. Selected Works / Projects Showcase */}
       <Projects />
 
-      {/* About Section */}
-      <section id="about" className="border-t border-white/10 pt-16">
-        <SectionHeader title="About Me" subtitle="Meet the developer" />
-        <MyStory />
-        <TechStack />
-        {/* <FullExperience /> */}
-      </section>
+      {/* 02. Engineering Disciplines & Services */}
+      <ServicesSection />
 
-      {/* Contact Form Section */}
+      {/* 03. Engineering Philosophy & Approach */}
+      <ApproachSection />
+
+      {/* 04. Career Chronology & Milestone Ledger */}
+      <ExperienceSection />
+
+      {/* 05. Technical Matrix & Toolchain */}
+      <SkillsSection />
+
+      {/* 06. Direct Inquiries & Contact Transmission */}
       <ContactSection />
     </main>
   );

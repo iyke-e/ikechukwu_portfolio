@@ -102,10 +102,21 @@
         "backend": [
             "Node.js",
             "Express.js",
+            "NestJS",
+            "PostgreSQL",
             "MongoDB",
+            "Redis (Caching & Pub/Sub)",
+            "Apache Kafka (Event Streaming)",
+            "RabbitMQ & Message Queues",
             "RESTful APIs",
             "GraphQL",
-            "Authentication & Authorization"
+            "gRPC",
+            "WebSockets",
+            "Prisma ORM & Mongoose",
+            "Docker & Containerization",
+            "Microservices Architecture",
+            "JWT, OAuth 2.0 & RBAC Security",
+            "Database Indexing & Query Optimization"
         ],
         "mobile": [
             "React Native",

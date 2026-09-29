@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { MdMessage } from "react-icons/md";
+import { FiMessageSquare, FiX } from "react-icons/fi";
 import ChatWindow from "./ChatWindow";
 
 export default function Chatbot() {
@@ -28,13 +28,11 @@ export default function Chatbot() {
 
             const data = await res.json();
 
-            // Declare splitMessages BEFORE using it
             const splitMessages: { role: "user" | "bot"; text: string }[] = data.reply
                 .split("\n")
                 .filter((text: string) => text.trim() !== "")
                 .map((text: string) => ({ role: "bot", text }));
 
-            // Type prev explicitly to fix TS error
             setMessages((prev: { role: "user" | "bot"; text: string }[]) => [
                 ...prev,
                 ...splitMessages,
@@ -50,15 +48,17 @@ export default function Chatbot() {
         }
     };
 
-
     return (
         <>
-            {/* Floating chat button */}
+            {/* Junca-style Minimal Floating Trigger */}
             <button
                 onClick={() => setOpen(!open)}
-                className="fixed bottom-6 right-6 z-50 w-13 h-13 rounded-full cursor-pointer transition duration-[0.7s] bg-white/20 text-white flex items-center justify-center shadow-lg hover:bg-white/30 hover:scale-110"
+                aria-label="Toggle interactive AI portfolio assistant"
+                className="fixed bottom-6 right-6 z-50 px-3.5 py-2 rounded-full hairline-all bg-[var(--surface)] text-[var(--fg)] hover:bg-[var(--surface-hover)] shadow-lg flex items-center gap-2 font-mono text-[11px] tracking-wider uppercase transition-all duration-300 cursor-pointer"
             >
-                <MdMessage size={24} />
+                <span className="w-1.5 h-1.5 rounded-full bg-[var(--red)] animate-pulse" />
+                <span>{open ? "Close AI" : "AI Agent"}</span>
+                {open ? <FiX className="w-3.5 h-3.5 text-[var(--fg)]" /> : <FiMessageSquare className="w-3.5 h-3.5 text-[var(--fg-3)]" />}
             </button>
 
             {/* Chat window */}
